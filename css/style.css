@@ -6,25 +6,87 @@
     box-sizing: border-box;
 }
 
-.Container {
-    display: grid;
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: radial-gradient(ellipse at center, rgb(46, 53, 56) 0%, rgb(45, 56, 60) 35%, rgb(25, 36, 40) 100%);
+    overflow: hidden;
+}
+
+.background_hideout {
+    background: radial-gradient(ellipse at center, rgb(46, 53, 56) 0%, rgb(45, 56, 60) 35%, rgb(25, 36, 40) 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    animation: Anim_BackgroundIn cubic-bezier(.4, .01, .15, 1.1) 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.background {
+    height: 30%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #005a59;
+}
+
+.wave {
+    background: url("../resources\\wave.svg") repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+.wave:nth-of-type(2) {
+    top: -105px;
+    animation: wave 22s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 12s ease -1.25s infinite;
+    opacity: 0.7;
+}
+
+.wave:nth-of-type(3) {
+    top: 50px;
+    animation: wave 26s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 0.5;
+}
+
+.wave:nth-of-type(4) {
+    top: 150px;
+    animation: wave 30s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 16s ease -1.25s infinite;
+    opacity: 0.3;
 }
 
 .CenterDisplay {
-    backdrop-filter: blur(5em);
-    -webkit-backdrop-filter: blur(5em);
+    backdrop-filter: blur(2em);
+    -webkit-backdrop-filter: blur(2em);
+    -moz-backdrop-filter: blur(2em);
+    -o-backdrop-filter: blur(2em);
     border: 2px solid var(--glass-color);
     border-radius: 0.7em;
     width: 500px;
-    height: 250px;
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    transform-origin: center;
 
-    animation: Anim_PopUpIn cubic-bezier(.4, .01, .15, 1.1) 1s;
+    box-shadow: 5px 5px 20px  rgba(0,0,0,0.6);
+    -moz-box-shadow: 5px 5px 20px  rgba(0,0,0,0.6);
+    -webkit-box-shadow: 5px 5px 20px  rgba(0,0,0,0.6);
+    -o-box-shadow: 5px 5px 20px  rgba(0,0,0,0.6);
+
+    animation: Anim_PopUpIn cubic-bezier(.38,1.89,.24,1) 1.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -36,7 +98,8 @@
 }
 
 .popup_text {
-    padding: 5px, 0,0,0;
+    padding: 5px;
+    padding-bottom: 20px;
     text-align: center;
     color: rgb(205 199 195);
     font-size: 0.95em;
@@ -44,13 +107,65 @@
 
 @media screen and (max-width:700px) {
     .CenterDisplay {
-        width: 250px;
+        width: 275px;
         height: 120px;
     }
+
     .popup_icon {
         width: 175px;
     }
+
     .popup_text {
-        font-size: 0.5em;
+        font-size: 0.45em;
+    }
+}
+
+@keyframes Anim_PopUpIn {
+
+    from {
+        top: 40%;
+        opacity: 0;
+    }
+
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes Anim_BackgroundIn {
+
+    from {
+        height: 150%;
+        width: 150%;
+        opacity: 1;
+    }
+
+    to {
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes wave {
+    0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: -1600px;
+    }
+}
+
+@keyframes swell {
+
+    0%,
+    100% {
+        transform: translate3d(0, -25px, 0);
+    }
+
+    50% {
+        transform: translate3d(0, 5px, 0);
     }
 }
