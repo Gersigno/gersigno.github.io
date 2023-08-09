@@ -1,4 +1,42 @@
-.center_div {
+* {
+    --glass-color: rgba(255, 255, 255, 0.1);
+    font-family: poppins, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Container {
+    display: grid;
+}
+
+.CenterDisplay {
+    backdrop-filter: blur(5em);
+    border: 2px solid var(--glass-color);
+    border-radius: 0.7em;
+    width: 500px;
+    height: 250px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    animation: Anim_PopUpIn cubic-bezier(.4, .01, .15, 1.1) 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.popup_icon {
+    width: 400px;
+    margin: auto;
     display: flex;
-    vertical-align: middle;
+}
+
+.popup_text {
+    padding: 5px, 0,0,0;
+    text-align: center;
+    color: rgb(205 199 195);
+    font-size: 0.95em;
 }
