@@ -12,6 +12,7 @@
 
 .CenterDisplay {
     backdrop-filter: blur(5em);
+    -webkit-backdrop-filter: blur(5em);
     border: 2px solid var(--glass-color);
     border-radius: 0.7em;
     width: 500px;
@@ -39,4 +40,17 @@
     text-align: center;
     color: rgb(205 199 195);
     font-size: 0.95em;
+}
+
+@media screen and (max-width:700px) {
+    .CenterDisplay {
+        width: 250px;
+        height: 120px;
+    }
+    .popup_icon {
+        width: 175px;
+    }
+    .popup_text {
+        font-size: 0.5em;
+    }
 }
