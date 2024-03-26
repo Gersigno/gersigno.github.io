@@ -1,0 +1,31 @@
+@keyframes Toast_In {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateX(-75%);
+        bottom: -50px;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(-50%);
+        bottom: 10px;
+    }
+}
+
+@keyframes Toast_Out {
+
+    0% {
+        cursor: default;
+        pointer-events: none;
+        opacity: 1;
+        transform: scale(1) translateX(-50%);
+        bottom: 10px;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translateX(-75%);
+        bottom: -50px;
+    }
+}

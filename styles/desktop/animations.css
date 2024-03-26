@@ -1,0 +1,76 @@
+/*
+    Waves
+*/
+@keyframes wave {
+    0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: -1600px;
+    }
+}
+
+/* 
+    On header loaded
+*/
+@keyframes OnLoaded_TopContainer {
+
+    from {
+        -ms-transform: translate(0, -150%);
+        transform: translate(0, -150%);
+        opacity: 0;
+    }
+
+    to {
+        -ms-transform: translate(0, 0%);
+        transform: translate(0, 0%);
+        opacity: 1;
+    }
+}
+
+/* 
+    On page loaded
+*/
+
+@keyframes Anim_BackgroundIn {
+
+    from {
+        height: 150%;
+        width: 150%;
+        opacity: 1;
+    }
+
+    to {
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@keyframes Desktop_FadeIn {
+
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes OnLoaded_BackLogoIn {
+
+    from {
+        top: 0%;
+        opacity: 0;
+    }
+
+    to {
+        top: -50%;
+        opacity: 1;
+    }
+}

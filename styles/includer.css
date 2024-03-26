@@ -1,0 +1,22 @@
+/* Main */
+@import "natives.css";
+@import "variables.css";
+@import "materials.css";
+
+/* Desktop */
+@import "desktop/animations.css";
+@import "desktop/background.css";
+@import "desktop/header.css";
+@import "desktop/icons.css";
+
+/* Interface */
+@import "interface/popup.css";
+@import "interface/animations.css";
+
+/* Windows */
+@import "windows/window.css";
+@import "windows/animations.css";
+
+/* Notifications */
+@import "notifications/toast/toast.css";
+@import "notifications/toast/animations.css";

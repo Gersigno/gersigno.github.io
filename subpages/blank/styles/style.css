@@ -1,0 +1,30 @@
+
+* {
+    font-family: system-ui;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    color: rgb(205 199 195);
+}
+::-webkit-scrollbar {
+    width: 0px;
+    padding-bottom: 5px;
+}
+h1 {
+    font-size: 3vw;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.55));
+}
+.CenterText {
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column
+}
+.KittenCry {
+    width: 20vw;
+    padding-top: 20px;
+} 

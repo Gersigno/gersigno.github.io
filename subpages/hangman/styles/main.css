@@ -1,0 +1,122 @@
+:root {
+    --background-color: rgba(227,227,227,0);
+    --hangman-src: url("../resources/p0.png");
+}
+
+* {
+    font-family: system-ui;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
+}
+body {
+    height: 100vh;
+    background-color: var(--background-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+img {
+    max-width: 300px;
+    color: #3a3a3a;
+    background-color: #f7f7f7;
+    box-shadow: 
+        inset 0 -2px 0 #aaaaaa,
+        inset 0px 1px 1px -1px #fff,
+        0px 1px 1px 0px #7a7a7a;
+    border-radius: 3px;
+}
+h2 {
+    font-weight: 600;
+    color: rgb(205, 199, 195);
+}
+
+b {
+    font-weight: 800;
+}
+
+button, select {
+    margin: 2px;
+    min-width: 40px;
+    height: 20%;
+    display: inline-block;
+    vertical-align: middle;
+    color: #3a3a3a;
+    background-color: #f7f7f7;
+    box-shadow: 
+        inset 0 -2px 0 #aaaaaa,
+        inset 0px 1px 1px -1px #fff,
+        0px 1px 1px 0px #7a7a7a;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 14px;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e9e9e9;
+}
+
+/* custom IDs */
+
+#VirtualKeyboard {
+    width: 90%;
+    height: 20%;
+}
+
+#pendu {
+    content: var(--hangman-src);
+}
+
+/* Custom classes */
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+}
+
+.ActionButton {
+    width: auto;
+    padding: 5px;
+    text-align: left;
+    height: auto;
+}
+
+.InfoButton {
+    width: auto;
+    padding: 5px;
+    height: auto;
+    visibility: collapse;
+    font-weight: 600;
+}
+
+/* Events classes */ 
+
+.KeyboardEnabled {
+    pointer-events: all;
+}
+
+.KeyboardDisabled {
+    pointer-events: none;
+}
+
+.MessageVisible {
+    visibility: visible;
+}
+
+.MessageHidden {
+    visibility: collapse;
+}

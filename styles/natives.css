@@ -1,0 +1,61 @@
+* {
+    font-family: system-ui;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    color: rgb(205 199 195);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    padding-bottom: 5px;
+}
+
+html, body {
+    background: radial-gradient(ellipse at center, rgb(46, 53, 56) 0%, rgb(45, 56, 60) 35%, rgb(25, 36, 40) 100%);
+    overflow: hidden;
+
+    height: 100%;
+    padding: 2px;
+}
+
+header {
+    height: 35px;
+    padding: 3px;
+    display: flex;
+    backdrop-filter: blur(var(--blur-level));
+    -webkit-backdrop-filter: blur(var(--blur-level));
+    -moz-backdrop-filter: blur(var(--blur-level));
+    -o-backdrop-filter: blur(var(--blur-level));
+    background-color: var(--main-color-transparant);
+    border: var(--border-width) solid var(--glass-color);
+    border-radius: var(--border-radius);
+    transition-duration: 200ms;
+    -ms-transform: translate(0, 0%);
+    transform: translate(0, 0%);
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+    -o-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+
+    animation: OnLoaded_TopContainer cubic-bezier(.38, 1.89, .24, 1) 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+a:link { 
+    text-decoration: none; 
+} 
+a:visited { 
+    text-decoration: none; 
+} 
+a:hover { 
+    text-decoration: none; 
+} 
+a:active { 
+    text-decoration: none; 
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <meta content="A simple ToDoList using Javascript and local storage !" name="description">
+
+    <title>My local ToDoList !</title>
+    <link rel="icon" type="image/png" href="resources/gwp_logo_uni.png"/>
+
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/native.css">
+    <link rel="stylesheet" href="styles/customClasses.css">
+</head>
+<body onload="Init()">
+    <header>
+        <h1>My local ToDoList</h1>
+    </header>
+    <main>
+        <section>
+            <div id="filtersContainer">
+            </div>
+            <p id="taskAmount">You have no task(s)...</p>
+            <button class="buttonSelected" onclick="newTaskOverlay()">Add a new task</button>
+        </section>
+        <ol id="listContainer">
+        </ol>
+    </main>
+
+    <script src="scripts/classes.js"></script>
+    <script src="scripts/localStorage.js"></script>
+    <script src="scripts/interface.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

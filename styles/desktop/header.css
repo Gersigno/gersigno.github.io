@@ -1,0 +1,82 @@
+.taskbar_button {
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    -moz-backdrop-filter: blur(0px);
+    -o-backdrop-filter: blur(0px);
+    border: var(--border-width) solid rgba(0, 0, 0, 0);
+    transition-duration: 200ms;
+    display: flex;
+    align-items: center;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: calc(var(--inner-radius) + 2px);
+}
+.taskbar_button:hover {
+    backdrop-filter: blur(var(--blur-level));
+    -webkit-backdrop-filter: blur(var(--blur-level));
+    -moz-backdrop-filter: blur(var(--blur-level));
+    -o-backdrop-filter: blur(var(--blur-level));
+    border: var(--border-width) solid var(--glass-color);
+    background-color: var(--glass-color);
+    cursor: pointer;
+}
+
+.taskbar_button_icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    border-radius: var(--inner-radius);
+}
+
+.taskbar_button_text {
+    padding: 5px;
+    text-align: center;
+    color: var(--theme-text-color);
+    font-size: 0.95em;
+}
+
+.taskbar_dock_right {
+    margin-left: auto;
+    display: flex;
+}
+/* Take every button inside our taskbar's right div, except for the last children, aka the date/time panel. */
+.taskbar_dock_right .taskbar_button:not(:last-child) {
+    margin-right: 4px;
+}
+
+.NotClickable {
+    pointer-events: none;
+    margin-right: 0px;
+}
+
+#taskbar_apps {
+    transition: 200ms;
+    display: flex;
+}
+
+.taskbar_app {
+    margin-left: 2px;
+}
+
+.taskbar_iconactive {
+    border: var(--border-width) solid var(--main-color);
+}
+
+.taskbar_iconIn {
+    animation: Taskbar_IconIn cubic-bezier(.38, 1.89, .24, 1) 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.taskbar_iconOut {
+    animation: Taskbar_IconOut cubic-bezier(.38, 1.89, .24, 1) 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.Beta {
+    border: var(--border-width) solid rgb(0, 196, 0);
+    color: rgb(0, 196, 0);
+    font-weight: 700;
+}

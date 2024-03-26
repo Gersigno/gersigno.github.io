@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+  <meta name="Description" content="Gersigno's online portfolio. 
+  A beautiful, fluent, web OS like online portfolio ! 
+  Discover a unique and intuitive experience through my portfolio thanks to a familiar desktop interface !">
+
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://gersigno.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gersigno's Portfolio">
+  <meta property="og:description" content="Gersigno's online portfolio. 
+  A beautiful, fluent, web OS like online portfolio ! 
+  Discover a unique and intuitive experience through my portfolio thanks to a familiar desktop interface !">
+  <meta property="og:image"
+    content="https://repository-images.githubusercontent.com/777968824/ce41b601-f4d0-4cb0-9d25-d66036f67f1e">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="gersigno.github.io">
+  <meta property="twitter:url" content="https://gersigno.github.io/">
+  <meta name="twitter:title" content="Gersigno's Portfolio">
+  <meta name="twitter:description" content="Gersigno's online portfolio. 
+  A beautiful, fluent, web OS like online portfolio ! 
+  Discover a unique and intuitive experience through my portfolio thanks to a familiar desktop interface !">
+  <meta name="twitter:image"
+    content="https://repository-images.githubusercontent.com/777968824/ce41b601-f4d0-4cb0-9d25-d66036f67f1e">
+
+
+  <title>Gersigno's Portfolio</title>
+  <link rel="icon" type="image/png" href="resources/favicon.png" />
+
+  <!-- This css file will import all others -->
+  <link rel="stylesheet" href="styles/includer.css">
+</head>
+
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+  <!-- Background (background-color gradian is set in the body) -->
+  <div id="background">
+    <!-- Background logo -->
+    <img src="resources/desktop/gwp_logo_text.png" id="background_logo">
+    <!-- Background waves -->
+    <section class="wave"></section>
+    <section class="wave"></section>
+    <section class="wave"></section>
+    <section class="wave"></section>
+  </div>
+
+  <!-- The "taskbar" of our desktop -->
+  <header>
+    <!-- Language button -->
+    <div id="taskbar_apps">
+      <button class="taskbar_button" onclick="UI_ShowLanguageSwitcher()">
+        <img class="taskbar_button_icon" id="lang_button_icon" src="resources/desktop/icons/lang_english.png">
+        <p class="taskbar_button_text">Language</p>
+      </button>
+    </div>
+
+
+    <!-- Right panel -->
+    <div class="taskbar_dock_right">
+      <!-- Settings button -->
+      <button class="taskbar_button Beta" id="taskbaricon_lang" onclick="Event_BetaPopup()">
+        <p class="taskbar_button_text">Portfolio still in Beta !</p>
+      </button>
+
+      <!-- Current Time -->
+      <button class="taskbar_button NotClickable">
+        <p class="taskbar_button_text" id="CurrentTime">Je suis la date xd</p>
+      </button>
+    </div>
+  </header>
+
+  <!-- Icons grid -->
+  <ol id="desktop_icons_grid">
+    <!-- Our desktop icons (aka desktop shortcuts) are generated in our "scripts/desktop/desktop.js" file. -->
+  </ol>
+  <!-- This div is used to fade our screen in when our page is loaded -->
+  <div id="background_hideout"></div>
+
+  <!-- Finally, we can import all of our javascript files -->
+  <script src="scripts/events.js"></script>
+  <script src="scripts/runtime.js"></script>
+
+  <script src="scripts/desktop/classes.js"></script>
+  <script src="scripts/desktop/desktop.js"></script>
+
+  <script src="scripts/interface/classes.js"></script>
+  <script src="scripts/interface/interface.js"></script>
+
+  <script src="scripts/settings/classes.js"></script>
+  <script src="scripts/settings/settings.js"></script>
+</body>
+
+</html>

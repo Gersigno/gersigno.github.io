@@ -1,0 +1,121 @@
+#popup_background {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+    top: 0px;
+    left: 0px;
+    transition-duration: 200ms;
+
+    backdrop-filter: blur(var(--blur-level));
+    -webkit-backdrop-filter: blur(var(--blur-level));
+    -moz-backdrop-filter: blur(var(--blur-level));
+    -o-backdrop-filter: blur(var(--blur-level));
+
+    display: flex;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup {
+    transition-duration: 200ms;
+
+    width: auto;
+    height: auto;
+
+    border: var(--border-width) solid var(--main-color);
+    border-radius: var(--border-radius);
+
+    /* backdrop-filter: blur(var(--blur-level));
+    -webkit-backdrop-filter: blur(var(--blur-level));
+    -moz-backdrop-filter: blur(var(--blur-level));
+    -o-backdrop-filter: blur(var(--blur-level)); */
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    -o-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    min-width: 10vw;
+    max-width: 25vw;
+}
+
+
+#buttons_layer {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+
+#ok_button, #cancel_button {
+    border: var(--border-width) solid var(--main-color);
+    background-color: var(--main-color-transparant);
+    border-radius: var(--inner-radius);
+    margin: 2px;
+    padding: 4px;
+    transition: 200ms;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    -o-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+#cancel_button {
+        border: var(--border-width) solid var(--grey-color);
+        background-color: var(--grey-color-transparant);
+}
+
+#ok_button:hover, #cancel_button:hover {
+    transform: scale(1.05);
+}
+
+#popup_title_layer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#popup_icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 0.5em;
+}
+#popup_title {
+    padding-left: 5px;
+}
+#popup_description {
+    color: rgb(205 199 195);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.open_popup {
+    animation: Anim_PopupIn cubic-bezier(.38, 1.89, .24, 1) 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.close_popup {
+    pointer-events: none;
+    animation: Anim_PopupOut cubic-bezier(.38, 1.89, .24, 1) 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.popup_blur {
+    background-color: var(--glass-color);
+}
+
+.popup_opaque {
+    backdrop-filter: none;
+    background-color:rgba(46, 53, 56,1);
+}
