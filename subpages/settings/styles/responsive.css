@@ -1,0 +1,24 @@
+@media screen and (min-width: 500px) and (max-width: 900px) {
+    /* Tablet */
+    
+}
+
+
+@media screen and (max-width: 500px) {
+    /* Phone */
+    .bar:first-of-type:not(.bar_center) {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    #ColorsList {
+        width: 100%;
+    }
+    .currentColor {
+        div {
+            img {
+                visibility: collapse;
+            }
+        }
+    }
+}

@@ -51,7 +51,14 @@ function deleteTask(target) {
         }
     }
     //After that, we clear the whole local storage.
-    localStorage.clear();
+    var taskAmount = parseInt(localStorage.getItem("task_amount"));
+    if(taskAmount != null) {
+        for(var i = 0; i < taskAmount; i++){
+            localStorage.removeItem("task_" + (i));
+        }
+    }
+
+
     //Then, we create our "task_amount" item again with the new amount of tasks.
     localStorage.setItem("task_amount", (tasks.length));
     for(var i = 0; i < tasks.length; i++) {

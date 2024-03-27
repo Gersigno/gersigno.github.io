@@ -8,15 +8,19 @@
 @import "desktop/background.css";
 @import "desktop/header.css";
 @import "desktop/icons.css";
+@import "desktop/responsive.css";
 
 /* Interface */
 @import "interface/popup.css";
 @import "interface/animations.css";
+@import "interface/responsive.css";
 
 /* Windows */
 @import "windows/window.css";
 @import "windows/animations.css";
+@import "windows/responsive.css";
 
 /* Notifications */
 @import "notifications/toast/toast.css";
 @import "notifications/toast/animations.css";
+

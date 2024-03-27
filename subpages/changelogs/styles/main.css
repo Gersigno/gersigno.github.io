@@ -1,0 +1,54 @@
+:root {
+    --main-color-transparant: rgba(0, 165, 167, 0.15);
+    --glass-color-hover: rgba(0, 165, 167, 0.3);
+    --main-color: rgb(255,0,0);
+
+    /* Style */
+    --blur-level: 2em;
+    --border-radius: 8px;
+    --inner-radius: 4px;
+    --border-width: 1px;
+}
+
+* {
+    font-family: system-ui;
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    color: rgb(205, 199, 195);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    padding-bottom: 5px;
+}
+
+section {
+    border-radius: var(--border-radius);
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255,255,255,0.05);
+    border: var(--border-width) solid rgba(255, 255, 255, 0.1);
+    padding: 5px;
+}
+section:first-child {
+    background-color: var(--glass-color-hover);
+}
+h2 {
+    margin: 10px;
+}
+h4 {
+    font-weight: 400;
+    margin: 0px;
+    padding-right: 2px;
+}
+h5 {
+    margin: 0px 5px 0px 2px;
+    padding: 0px;
+    font-weight: 400;
+    margin-left: 3vw;
+    opacity: 0.8;
+}

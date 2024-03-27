@@ -66,6 +66,7 @@
     -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     -o-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    text-wrap: nowrap;
 }
 #cancel_button {
         border: var(--border-width) solid var(--grey-color);

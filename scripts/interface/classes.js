@@ -182,8 +182,24 @@ class Window {
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
       const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
       const SpawnPercentage = 25;
-      var newTop = ((vh * SpawnPercentage)/100) + (opened_windows.length * 20);
-      var newLeft = ((vw * SpawnPercentage)/100) + (opened_windows.length * 20);
+      var newTop;
+      var newLeft;
+      if(vw < 960 && vw > 500) {
+        //tablet
+        newTop = 45;
+        newLeft = 5;
+      } 
+      if(vw < 500) {
+        //phone
+        newTop = 5;
+        newLeft = 5;
+      } 
+      if(vw > 960) {
+        //computer
+        newTop = ((vh * SpawnPercentage)/100) + (opened_windows.length * 20);
+        newLeft = ((vw * SpawnPercentage)/100) + (opened_windows.length * 20);
+      }
+      
       WINDOW.style.top = newTop + "px";
       WINDOW.style.left = newLeft + "px"
 
@@ -390,11 +406,15 @@ class Window {
    * This function is called on mouse up & on mouse leave events
    */
   MoveWindowStop() {
-    const WINDOW = document.getElementById(MovingWindow);
-    WINDOW.style.transitionDuration = "200ms;"
-    const WINDOW_CONTENT = document.getElementById(MovingWindow + "_content");
-    WINDOW_CONTENT.style.pointerEvents = "all"
-    MovingWindow = "";
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    if(vw > 960) {
+      const WINDOW = document.getElementById(MovingWindow);
+      WINDOW.style.transitionDuration = "200ms;"
+      const WINDOW_CONTENT = document.getElementById(MovingWindow + "_content");
+      WINDOW_CONTENT.style.pointerEvents = "all"
+      MovingWindow = "";
+    }
+    
   }
 
   /**
@@ -402,15 +422,19 @@ class Window {
    * @param {*} Target moving window's whandler
    */
   MoveWindow(Target) {
-    MovingWindow = Target.id;
-    StartMousePos = mousePos;
-    const WINDOW = document.getElementById(MovingWindow);
-    const WINDOW_CONTENT = document.getElementById(MovingWindow + "_content");
-    WINDOW.style.transitionDuration = "0ms;"
-    WINDOW_CONTENT.style.pointerEvents = "none"
-    StartWinPos = {x: WINDOW.style.left, y: WINDOW.style.top};
-    StartWinPos.x = parseFloat(StartWinPos.x.toString().replace("px",""));
-    StartWinPos.y = parseFloat(StartWinPos.y.toString().replace("px",""));
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    if(vw > 960) {
+      MovingWindow = Target.id;
+      StartMousePos = mousePos;
+      const WINDOW = document.getElementById(MovingWindow);
+      const WINDOW_CONTENT = document.getElementById(MovingWindow + "_content");
+      WINDOW.style.transitionDuration = "0ms;"
+      WINDOW_CONTENT.style.pointerEvents = "none"
+      StartWinPos = {x: WINDOW.style.left, y: WINDOW.style.top};
+      StartWinPos.x = parseFloat(StartWinPos.x.toString().replace("px",""));
+      StartWinPos.y = parseFloat(StartWinPos.y.toString().replace("px",""));
+    }
+
   }
 }
 
