@@ -1,0 +1,22 @@
+@media screen and (min-width: 500px) and (max-width: 900px) {
+    /* Tablet */
+    h1 {
+        font-size: 5vw;
+        text-align: center;
+    }
+    .KittenCry {
+        width: 40vw;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    /* Phone */
+    h1 {
+        font-size: 7vw;
+        text-align: center;
+    }
+    .KittenCry {
+        width: 60vw;
+    }
+}

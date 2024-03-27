@@ -8,6 +8,7 @@ new DesktopIcon("GitHub", "resources/desktop/icons/github.png", ()=>UI_CreatePup
 new DesktopIcon("Email me", "resources/desktop/icons/gmail.png", ()=>UI_CreatePupup("resources/desktop/icons/gmail.png","Email me", "My email address: contact.gersigno@gmail.com", "Copy email to clipboard",()=>CopyMailToClipboard(), "Cancel"), "email");
 new DesktopIcon("Discord infos", "resources/desktop/icons/discord.png", ()=>createWindow("resources/desktop/icons/discord.png", "Discord server's informations","subpages\\discord\\index.html","discord"), "discord");
 new DesktopIcon("Settings", "resources/desktop/icons/settings.png", ()=>createWindow("resources/desktop/icons/settings.png", "Settings","subpages\\settings\\index.html","settings"), "settings");
+new DesktopIcon("Changelogs", "resources/desktop/icons/changelogs.png", ()=>createWindow("resources/desktop/icons/changelogs.png", "Changelogs","subpages\\changelogs\\index.html","changelogs"), "changelogs");
 
 //Then, we check for any custom shortcuts pinned in our desktop.
 checkForShortcuts();

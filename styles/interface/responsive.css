@@ -1,0 +1,14 @@
+@media screen and (max-width: 850px) {
+    /* Tablet */
+    #popup {
+        max-width: 50vw;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    /* Phone */
+    #popup {
+        max-width: 90vw;
+    }
+}
