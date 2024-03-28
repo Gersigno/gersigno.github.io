@@ -21,4 +21,10 @@
             }
         }
     }
+    .bar_inline {
+        display: flex;
+        align-items: flex-end;
+        width: fit-content;
+        flex-wrap: wrap;
+    }
 }

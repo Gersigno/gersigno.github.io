@@ -52,7 +52,7 @@ function updateCheckbox() {
    }
    document.documentElement.style.setProperty("--border-radius", (parseInt(localStorage.getItem("theme_rounded") * 8 ) + "px"));
    document.documentElement.style.setProperty("--inner-radius", (parseInt(localStorage.getItem("theme_rounded") * 4 ) + "px"));//theme_wider
-   if(localStorage.getItem("theme_wider") == "1") {
+   if(localStorage.getItem("theme_wider") == "1.5") {
       document.getElementById("widerCorners").checked = true;
    } else {
       document.getElementById("widerCorners").checked = false;

@@ -29,6 +29,40 @@
     -o-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
 }
 
+.infoBadge {
+    border: var(--border-width) solid var(--main-color-transparant);
+    background-color: var(--main-color);
+    backdrop-filter: blur(var(--blur-level));
+    border-radius: calc(var(--border-radius) * 2);
+    -webkit-backdrop-filter: blur(var(--blur-level));
+    -moz-backdrop-filter: blur(var(--blur-level));
+    -o-backdrop-filter: blur(var(--blur-level));
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    -o-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    z-index: 5;
+
+    position: absolute;
+    padding: 2px 4px 2px 4px;
+
+    transition: 200ms;
+
+    pointer-events: none;
+    margin-left: 40px;
+    margin-top: 0px;
+
+    font-size: 0.8em;
+    font-weight: 700;
+    text-align: end;
+    p {
+        /* mix-blend-mode:difference; */
+        color: var(--main-color);
+        filter: invert(1) contrast(100) saturate(100) grayscale(1);
+    }
+}
+
 .desktop_icon_layout:hover {
     cursor: pointer;
     border: var(--border-width) solid var(--glass-color-hover);
@@ -42,7 +76,10 @@
     -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     -o-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
-
+    .infoBadge {
+        margin-left: 70px;
+        margin-top: -10px;
+    }
 }
 
 .desktop_icon {
@@ -64,3 +101,4 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
+

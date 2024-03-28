@@ -61,50 +61,72 @@ function format(date, format) {
  *  
  */
 window.onmessage = function(e) {
-  //devtool comunication test
-  if (e.data == 'ping') {
-      console.log('[runtime] pong');
-  }
+  if(typeof(e.data) == "string") {
+      //devtool comunication test
+      if (e.data == 'ping') {
+          console.log('[runtime] pong');
+      }
 
-  //debug: send an settings_updated message to every iframes.
-  if (e.data == 'debug_settings_updates') {
-    SETTINGS_UPDATED();
-  }
+      //debug: send an settings_updated message to every iframes.
+      if (e.data == 'debug_settings_updates') {
+        SETTINGS_UPDATED();
+      }
 
-  //Start applications
-  if (e.data == 'startapp_hangman') {
-    createWindow("resources/desktop/icons/hang.png", "The hangman game (French words dictionary)","subpages\\hangman\\index.html","hangman")
-  }
-  if (e.data == 'startapp_todolist') {
-    createWindow("resources/desktop/icons/todolist.png", "ToDoList","subpages\\todolist\\index.html","todolist")
-  }
+      //Start applications
+      if (e.data == 'startapp_hangman') {
+        createWindow("resources/desktop/icons/hang.png", "The hangman game (French words dictionary)","subpages\\hangman\\index.html","hangman");
+        for(var i = 0; i < opened_windows.length; i++) {
+          if(opened_windows[i].whandler == focused_window) {
+            opened_windows[i].iframe.focus();
+            trackClick();
+            break;
+          }
+        }
+      }
+      if (e.data == 'startapp_todolist') {
+        createWindow("resources/desktop/icons/todolist.png", "ToDoList","subpages\\todolist\\index.html","todolist");
+        for(var i = 0; i < opened_windows.length; i++) {
+          if(opened_windows[i].whandler == focused_window) {
+            opened_windows[i].iframe.focus();
+            trackClick();
+            break;
+          }
+        }
+      }
 
-  //add shortcuts to desktop
-  if (e.data == 'addShortcut_todolist') {
-    createShortcut("ToDoList", "resources/desktop/icons/todolist.png", ()=>createWindow("resources/desktop/icons/todolist.png", "ToDoList","subpages\\todolist\\index.html","todolist"), "todolist");
-  }
-  if(e.data == 'addShortcut_hangman') {
-    createShortcut("The Hangman game", "resources/desktop/icons/hang.png", ()=>createWindow("resources/desktop/icons/hang.png", "The hangman game (French words dictionary)","subpages\\hangman\\index.html","hangman"), "hangman");
-  }
+      //add shortcuts to desktop
+      if (e.data == 'addShortcut_todolist') {
+        createShortcut("ToDoList", "resources/desktop/icons/todolist.png", ()=>createWindow("resources/desktop/icons/todolist.png", "ToDoList","subpages\\todolist\\index.html","todolist"), "todolist");
+      }
+      if(e.data == 'addShortcut_hangman') {
+        createShortcut("The Hangman game", "resources/desktop/icons/hang.png", ()=>createWindow("resources/desktop/icons/hang.png", "The hangman game (French words dictionary)","subpages\\hangman\\index.html","hangman"), "hangman");
+      }
 
-  //Theme color update
-  if(e.data.split("_")[0] == 'setThemeColor') {
-    SetThemeColor(e.data.split("_")[1], e.data.split("_")[2], e.data.split("_")[3])
-  }
-  //setRoundedBorders_
-  if(e.data.split("_")[0] == 'setRoundedBorders') {
-    setRoundedBorders(e.data.split("_")[1]);
-    document.documentElement.style.setProperty("--border-radius", (parseInt(localStorage.getItem("theme_rounded") * 8 ) + "px"));
-    document.documentElement.style.setProperty("--inner-radius", (parseInt(localStorage.getItem("theme_rounded") * 4 ) + "px"));
-  }
+      //Theme color update
+      if(e.data.split("_")[0] == 'setThemeColor') {
+        SetThemeColor(e.data.split("_")[1], e.data.split("_")[2], e.data.split("_")[3])
+      }
+      //setRoundedBorders_
+      if(e.data.split("_")[0] == 'setRoundedBorders') {
+        setRoundedBorders(e.data.split("_")[1]);
+        document.documentElement.style.setProperty("--border-radius", (parseInt(localStorage.getItem("theme_rounded") * 8 ) + "px"));
+        document.documentElement.style.setProperty("--inner-radius", (parseInt(localStorage.getItem("theme_rounded") * 4 ) + "px"));
+      }
 
-  if(e.data.split("_")[0] == 'setWiderBorders') {
-    setWiderBorders(e.data.split("_")[1]);
-    document.documentElement.style.setProperty("--border-width", (parseInt(localStorage.getItem("theme_wider")  )+ 1 + "px"));
-  }
-  if(e.data.split("_")[0] == 'setBlurBack') {
-    setBlurBack(e.data.split("_")[1]);
-    document.documentElement.style.setProperty("--blur-level", (parseInt(localStorage.getItem("theme_blur")  )*2 + "em"));
-    
-  }
+      if(e.data.split("_")[0] == 'setWiderBorders') {
+        setWiderBorders(e.data.split("_")[1]);
+        document.documentElement.style.setProperty("--border-width", (parseInt(localStorage.getItem("theme_wider")  )+ 1 + "px"));
+      }
+      if(e.data.split("_")[0] == 'setBlurBack') {
+        setBlurBack(e.data.split("_")[1]);
+        document.documentElement.style.setProperty("--blur-level", (parseInt(localStorage.getItem("theme_blur")  )*2 + "em"));
+        
+      }
+      if(e.data == 'changelogs_readed') {
+        var element = document.getElementById("changelogs_badge")
+        if(element != null) {
+          element.remove();
+        }
+      }
+    }
 };
