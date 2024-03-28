@@ -131,7 +131,7 @@ function setRoundedBorders(value) {
 function setWiderBorders(value) {
   var num;
   if(value == "true") {
-    num = 1;
+    num = 1.5;
   } else {
     num = 0;
   }

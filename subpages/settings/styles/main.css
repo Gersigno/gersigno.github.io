@@ -103,7 +103,7 @@ section {
         padding: 0px;
         width: 40%;
         height: 40%;
-        border-radius: 0 0 0 var(--border-radius);
+        border-radius: 0 calc(var(--border-radius) /2) 0 var(--border-radius);
         background-color: rgba(255, 255, 255, 1);
         img {
             width: 80%;
@@ -124,6 +124,7 @@ label {
 	cursor: pointer;
 	text-indent: -9999px;
 	width: 40px;
+    min-width: 40px;
 	height: 20px;
 	background: rgb(54, 54, 54);
 	display: block;
@@ -175,4 +176,29 @@ a {
 
 .credits_secondText {
     text-wrap: nowrap;
+}
+
+.actionButton {
+    background-color: transparent;
+    border: var(--border-width) solid rgba(255, 255, 255, 0.2);
+    transition-duration: 200ms;
+    display: flex;
+    align-items: center;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: calc(var(--inner-radius) + 2px);
+    margin: 10px;
+    padding: 2px;
+    img {
+        width: 20px;
+        height: 20px;
+    }
+    p {
+        margin: 0px 2px 0px 2px;
+    }
+}
+
+.actionButton:hover {
+    background-color: var(--glass-color-hover);
+    cursor: pointer;
 }

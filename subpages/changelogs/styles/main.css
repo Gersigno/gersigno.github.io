@@ -39,6 +39,7 @@ section:first-child {
 }
 h2 {
     margin: 10px;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.35));
 }
 h4 {
     font-weight: 400;
@@ -51,4 +52,14 @@ h5 {
     font-weight: 400;
     margin-left: 3vw;
     opacity: 0.8;
+}
+
+
+#beta110_preview {
+    width: 150px;
+    margin: 10px;
+    margin-left: 10px;
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid rgba(255, 255, 255, 0.2);
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.35));
 }

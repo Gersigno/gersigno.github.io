@@ -60,6 +60,7 @@ function trackClick() {
       if(opened_windows[i].whandler == document.getElementById(document.activeElement.id).parentElement.parentElement.id) {
         //if we found our window's object inside our opened_windows array, we bring it in front of the others.
         opened_windows[i].BringToFront(document.getElementById(document.activeElement.id).parentElement.parentElement);
+        //console.log("App started, focus: " + focused_window + " | ", document.activeElement);
         break;
       }
     }
