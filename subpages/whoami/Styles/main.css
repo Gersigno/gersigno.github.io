@@ -2,7 +2,7 @@
     --theme-color: rgb(122, 223, 97);
 }
 * {
-    font-family: system-ui;
+    font-family: "Rubik", sans-serif;
     border: 0;
     box-sizing: border-box;
     margin: 0;

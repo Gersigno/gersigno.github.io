@@ -160,6 +160,8 @@ class Window {
     this.content = content;
     this.whandler = whandler;
     this.iframe;
+    this.windowedLastPosition = [0,0];
+    this.maximized = false;
     this.createWindow();
   }
   /**
@@ -184,15 +186,18 @@ class Window {
       const SpawnPercentage = 25;
       var newTop;
       var newLeft;
+      var deviceType = 0;
       if(vw < 960 && vw > 500) {
         //tablet
         newTop = 45;
         newLeft = 5;
+        deviceType = 1;
       } 
       if(vw < 500) {
         //phone
         newTop = 5;
         newLeft = 5;
+        deviceType = 2;
       } 
       if(vw > 960) {
         //computer
@@ -219,10 +224,36 @@ class Window {
         })
       );
       WINDOW_HEAD.appendChild(
+        Object.assign(document.createElement("div"), {
+          id: this.whandler + "_head__buttons_contaier",
+          className: "window_head_buttons_container",
+        })
+      );
+      const WINDOW_HEAD_BTN_HOST = document.getElementById(this.whandler + "_head__buttons_contaier");
+      if(deviceType != 2) {
+        WINDOW_HEAD_BTN_HOST.appendChild(
+          Object.assign(document.createElement("button"), {
+            id: this.whandler + "_min_button",
+            innerHTML: "_",
+            className: "window_btn window_min_btn",
+          })
+        );
+      }
+      
+      if(deviceType == 0) {
+        WINDOW_HEAD_BTN_HOST.appendChild(
+          Object.assign(document.createElement("button"), {
+            id: this.whandler + "_max_button",
+            innerHTML: "▭",
+            className: "window_btn window_max_btn",
+          })
+        );
+      }
+      WINDOW_HEAD_BTN_HOST.appendChild(
         Object.assign(document.createElement("button"), {
           id: this.whandler + "_close_button",
           innerHTML: "X",
-          className: "window_close_btn",
+          className: "window_btn window_close_btn",
         })
       );
 
@@ -232,6 +263,25 @@ class Window {
       CLOSE_BUTTON.addEventListener("click", () => {
         this.closeWindow(this.whandler);
       });
+      if(deviceType == 0) {
+        const MAX_BUTTON = document.getElementById(
+          this.whandler + "_max_button"
+        );
+        MAX_BUTTON.addEventListener("click", () => {
+          this.maxWindow(this.whandler);
+        });
+      }
+      if(deviceType != 2) {
+        const MIN_BUTTON = document.getElementById(
+          this.whandler + "_min_button"
+        );
+        MIN_BUTTON.addEventListener("click", () => {
+          this.minWindow(this.whandler);
+        });
+      }
+      
+      
+      
 
       const WINDOW_HEAD_CONTAINER = document.getElementById(
         this.whandler + "_head_contaier"
@@ -296,12 +346,20 @@ class Window {
           if(opened_windows[i].whandler == this.id.replace("taskbaricon_","")) {
             //if we found our window's object inside our opened_windows array, we bring it in front of the others.
             opened_windows[i].BringToFront(document.getElementById(this.id.replace("taskbaricon_","")));
+            document.getElementById(this.id.replace("taskbaricon_","")).classList.remove("window_minimized");
             break;
           }
         }
       }
 
       taskbar.appendChild(newIcon);
+
+      WINDOW.appendChild(
+        Object.assign(document.createElement("div"), {
+          id: this.whandler + "_focus_overlay",
+          className: "window_focusBorders",
+        })
+      );
 
       this.BringToFront(WINDOW);
 
@@ -311,6 +369,7 @@ class Window {
         //This window already exists in our desktop, bringing it to the front.
         const WINDOW = document.getElementById(this.whandler);
         this.BringToFront(WINDOW);
+        WINDOW.classList.remove("window_minimized");
       }
 
       const WINDOW = document.getElementById(this.whandler);
@@ -372,6 +431,37 @@ class Window {
     }, 500);
   }
 
+  maxWindow(Target) {
+    const TASKBAR_SIZE = 39;
+    const SCREEN_BORDER_PADDING = 4;
+    const WINDOW = document.getElementById(Target);
+    for(var i = 0; i < opened_windows.length; i++) {
+      if(opened_windows[i].whandler == Target) {
+        if(opened_windows[i].maximized == false) {
+          opened_windows[i].windowedLastPosition[0] = WINDOW.style.left;
+          opened_windows[i].windowedLastPosition[1] = WINDOW.style.top;
+          MovingWindow = "";
+          WINDOW.classList.add("window_maximized");
+          opened_windows[i].maximized = true;
+          WINDOW.style.left = SCREEN_BORDER_PADDING + "px";
+          WINDOW.style.top = + TASKBAR_SIZE + SCREEN_BORDER_PADDING + "px";
+        } else {
+          //go default size
+          MovingWindow = "";
+          WINDOW.classList.remove("window_maximized");
+          opened_windows[i].maximized = false;
+          WINDOW.style.left = opened_windows[i].windowedLastPosition[0];
+          WINDOW.style.top = opened_windows[i].windowedLastPosition[1];
+        }
+      }
+    }
+  }
+
+  minWindow(Target) {
+    const WINDOW = document.getElementById(Target);
+    WINDOW.classList.add("window_minimized");
+  }
+
   /**
    * This function bring the target window in front of the others
    * @param {*} Target
@@ -383,6 +473,7 @@ class Window {
       OTHER_WINDOWS[i].classList.remove("window_infront");
       OTHER_WINDOWS[i].classList.remove("window_focused");
       OTHER_WINDOWS[i].classList.add("window_not_infront");
+      document.getElementById(OTHER_WINDOWS[i].id + "_focus_overlay").classList.remove("window_focusBorders");
     }
     Target.style.zIndex = 100 + opened_windows.length;
     
@@ -391,8 +482,11 @@ class Window {
       Target.classList.add("window_infront");
     }
     Target.classList.add("window_focused");
+
     
     focused_window = Target.id;
+    document.getElementById(Target.id + "_focus_overlay").classList.add("window_focusBorders");
+    document.getElementById(Target.id + "_focus_overlay").zIndex = 100 + opened_windows.length + 1;
 
     const TASK_BAR = document.getElementById("taskbar_apps").children;
     for(var i = 1; i < TASK_BAR.length; i++) {
@@ -423,10 +517,10 @@ class Window {
    */
   MoveWindow(Target) {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-    if(vw > 960) {
-      MovingWindow = Target.id;
+    MovingWindow = Target.id;
+    const WINDOW = document.getElementById(MovingWindow);
+    if(vw > 960 && !WINDOW.classList.contains("window_maximized")) {
       StartMousePos = mousePos;
-      const WINDOW = document.getElementById(MovingWindow);
       const WINDOW_CONTENT = document.getElementById(MovingWindow + "_content");
       WINDOW.style.transitionDuration = "0ms;"
       WINDOW_CONTENT.style.pointerEvents = "none"

@@ -10,11 +10,11 @@ var StartWinPos = { x: undefined, y: undefined };
 window.addEventListener("mousemove", (event) => {
   //Set the current cursor position to the mousePos variable
   mousePos = { x: event.clientX, y: event.clientY };
-  if (MovingWindow != null && MovingWindow != undefined && MovingWindow != "") {
+  var MyWindow = document.getElementById(MovingWindow);
+  if (MovingWindow != null && MovingWindow != undefined && MovingWindow != "" && !MyWindow.classList.contains("window_maximized")) {
     //If our user is moving a window, we update the position.
     const TASKBAR_SIZE = 39;
     const SCREEN_BORDER_PADDING = 4;
-    var MyWindow = document.getElementById(MovingWindow);
     var MyWindowContainer = document.getElementById(MovingWindow);
 
     var Diff = { x: undefined, y: undefined };

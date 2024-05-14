@@ -67,6 +67,7 @@
     cursor: pointer;
     border: var(--border-width) solid var(--glass-color-hover);
     background-color: var(--main-color-transparant);
+    
     backdrop-filter: blur(var(--blur-level));
     -webkit-backdrop-filter: blur(var(--blur-level));
     -moz-backdrop-filter: blur(var(--blur-level));

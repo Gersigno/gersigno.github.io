@@ -3,6 +3,7 @@
     --background-dark: rgba(0, 83.5, 83.5, 1);
     --main-color: rgba(0, 165, 167, 1);
     --main-color-transparant: rgba(0, 165, 167, 0.15);
+    --main-color-shadow: rgba(0, 165, 167, 0.45);
 
     --grey-color: rgba(165, 165, 165, 1);
     --grey-color-transparant: rgba(165, 165, 165, 0.15);
