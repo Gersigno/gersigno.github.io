@@ -11,7 +11,7 @@
 }
 
 * {
-    font-family: system-ui;
+    font-family: "Rubik", sans-serif;
     border: 0;
     box-sizing: border-box;
     outline: 0;
@@ -53,13 +53,19 @@ h5 {
     margin-left: 3vw;
     opacity: 0.8;
 }
-
+.preview_img {
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid rgba(255, 255, 255, 0.2);
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.35));
+}
 
 #beta110_preview {
     width: 150px;
     margin: 10px;
     margin-left: 10px;
-    border-radius: var(--border-radius);
-    border: var(--border-width) solid rgba(255, 255, 255, 0.2);
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.35));
+}
+
+#beta120_preview {
+    margin: 10px;
+    width: calc(50% - 20px);
 }

@@ -19,10 +19,28 @@ function updateBlur(element) {
    window.top.postMessage('setBlurBack_' + element.checked, '*')//blurback
 }
 
-
+function updateWallpaper(element) {
+   var folderName = element.children[1].innerHTML;
+   for (const child of  element.children) {
+      for (const subchild of  child.children) {
+         if(subchild.classList.contains("wallpaper_name")) {
+            folderName = subchild.innerHTML;
+            break;
+         }
+      }
+      if(child.classList.contains("wallpaper_name")) {
+         folderName = child.innerHTML;
+         break;
+      }
+   }
+   folderName = folderName.toLowerCase();
+   folderName = folderName.replace(" ", "")
+   window.top.postMessage('setWallpaper_' + folderName, '*');
+}
 
 function updateSelectedColor() {
    document.documentElement.style.setProperty("--main-color", "rgb("+localStorage.getItem("theme_color")+")")
+   document.documentElement.style.setProperty("--glass-color-hover", "rgba("+localStorage.getItem("theme_color")+", 0.3)")
    var colorButtons = document.getElementById("ColorsList").children;
    var found = false;
    for(var i = 0; i < colorButtons.length; i++) {
@@ -45,7 +63,7 @@ function updateSelectedColor() {
 }
 
 function updateCheckbox() {
-   if(localStorage.getItem("theme_rounded") == "1") {
+   if(localStorage.getItem("theme_rounded") == "2") {
       document.getElementById("roundedCorners").checked = true;
    } else {
       document.getElementById("roundedCorners").checked = false;

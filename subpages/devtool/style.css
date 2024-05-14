@@ -1,0 +1,56 @@
+:root {
+    --main-color-transparant: rgba(0, 165, 167, 0.15);
+    --glass-color-hover: rgba(0, 165, 167, 0.3);
+    --main-color: rgb(255,0,0);
+
+    /* Style */
+    --blur-level: 2em;
+    --border-radius: 8px;
+    --inner-radius: 4px;
+    --border-width: 1px;
+}
+
+* {
+    font-family: "Consolas", sans-serif;
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    color: rgb(205, 199, 195);
+}
+main {
+    height: calc(100vh - 18px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#console_content {
+    resize: none;
+    height: 100%;
+    border-radius: var(--border-radius);
+    background-color: rgba(255,255,255,0.05);
+    border: var(--border-width) solid rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    padding: 5px;
+}
+#console_input {
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    margin-left: 5px;
+    padding: 5px;
+    width: 100%;
+}
+div {
+    display: flex;
+    margin-top: 5px;
+}
+select {
+    border-radius: var(--border-radius);
+    border: var(--border-width) solid rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    height: 100%;
+}

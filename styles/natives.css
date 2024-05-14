@@ -1,5 +1,5 @@
 * {
-    font-family: system-ui;
+    font-family: "Rubik", sans-serif;
     border: 0;
     box-sizing: border-box;
     margin: 0;
@@ -45,6 +45,8 @@ header {
     animation: OnLoaded_TopContainer cubic-bezier(.38, 1.89, .24, 1) 1.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.55));
 }
 
 a:link { 

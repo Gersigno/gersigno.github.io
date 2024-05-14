@@ -110,7 +110,7 @@ window.onmessage = function(e) {
       if(e.data.split("_")[0] == 'setRoundedBorders') {
         setRoundedBorders(e.data.split("_")[1]);
         document.documentElement.style.setProperty("--border-radius", (parseInt(localStorage.getItem("theme_rounded") * 8 ) + "px"));
-        document.documentElement.style.setProperty("--inner-radius", (parseInt(localStorage.getItem("theme_rounded") * 4 ) + "px"));
+        document.documentElement.style.setProperty("--inner-radius", (parseInt((localStorage.getItem("theme_rounded") * 8 ) - 2) + "px"));
       }
 
       if(e.data.split("_")[0] == 'setWiderBorders') {
@@ -122,11 +122,19 @@ window.onmessage = function(e) {
         document.documentElement.style.setProperty("--blur-level", (parseInt(localStorage.getItem("theme_blur")  )*2 + "em"));
         
       }
+      if(e.data.split("_")[0] == 'setWallpaper') {
+        setWallpaper(e.data.split("_")[1]);
+      }
       if(e.data == 'changelogs_readed') {
         var element = document.getElementById("changelogs_badge")
         if(element != null) {
           element.remove();
         }
       }
+      if(e.data == 'settings_updated') {
+        document.documentElement.style.setProperty("--border-radius", (parseInt(localStorage.getItem("theme_rounded") * 8 ) + "px"));
+        document.documentElement.style.setProperty("--inner-radius", (parseInt((localStorage.getItem("theme_rounded") * 8 ) - 2) + "px"));
+      }
+      
     }
 };

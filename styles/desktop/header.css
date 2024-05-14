@@ -1,3 +1,4 @@
+/* The header (taskbar) body style is located in "../native.css" (header) */
 .taskbar_button {
     height: 100%;
     background: transparent;
@@ -11,7 +12,7 @@
     align-items: center;
     padding-left: 2px;
     padding-right: 2px;
-    border-radius: calc(var(--inner-radius) + 2px);
+    border-radius: calc(var(--border-radius) + 2px);
 }
 .taskbar_button:hover {
     backdrop-filter: blur(var(--blur-level));
