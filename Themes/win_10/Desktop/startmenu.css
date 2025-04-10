@@ -1,0 +1,17 @@
+start-menu {
+    background-color: color-mix(in srgb, var(--color-lighteralt) 50%, transparent);
+    backdrop-filter: blur(15px);
+
+    menu:first-of-type {
+        button {
+            background-color: transparent;
+        }
+        button:first-child {
+            margin-bottom: auto;
+        }
+    }
+    menu:last-of-type {
+        height: 100%;
+        /* width: 300px; */
+    }
+}

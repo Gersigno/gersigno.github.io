@@ -1,0 +1,44 @@
+#wallpaper {
+    background: url('https://cdn.wallpaperhub.app/cloudcache/b/d/7/6/4/b/bd764bb25d49a05105060185774ba14cd2c846f7.jpg');
+    background-size: cover;
+    z-index: inherit !important;
+}
+
+#wallpaper::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(87, 87, 87, 0) 50%, rgba(62, 62, 62, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 9999;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    opacity: 0.15;
+}
+
+#wallpaper::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(87, 87, 87, 0) 50%, rgba(62, 62, 62, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 9999;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    opacity: 0.25;
+    animation: screeneffect 200ms infinite linear;
+}
+
+@keyframes screeneffect {
+    from {
+        background-size: 100% 2px, 3px 100%;
+    } to {
+        background-size: 100% 3px, 3px 100%;
+    }
+}

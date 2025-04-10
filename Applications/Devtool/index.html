@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" defer></script>
+
+</head>
+<body>
+    <nav-view>
+        <!-- Buttons -->
+        <nav-view-button page_id="events">
+            <button-icon icon="antena" size="small"></button-icon>
+            <p>Events</p>
+        </nav-view-button>
+
+        <nav-view-button page_id="customize">
+            <button-icon icon="customize" size="small"></button-icon>
+            <p>Customization</p>
+        </nav-view-button>
+
+        <!-- Pages -->
+        <nav-view-page page_id="events">
+            <h4>System events</h4>
+            <div class="horizontal">
+                <select id="event-select">
+                </select>
+                <button class="button" id="event-button">Trigger Event</button>
+            </div>
+            <br>
+            <h4>Window messages</h4>
+            <div class="horizontal">
+                <input type="text" id="window-message-input" placeholder="Message">
+                <button class="button" id="window-message-button">Send</button>
+            </div>
+            <p>Message listener</p>
+            <p><i>Use devtool console (F12) to check message's full object</i></p>
+            <textarea id="window-message-textarea" readonly></textarea>
+        </nav-view-page>
+        
+        <nav-view-page page_id="customize">
+            <h3>Theme</h3>
+            
+            <h3>Color schem</h3>
+            <input type="color" id="theme-color" name="theme-color" value="#ff0000">
+        </nav-view-page>
+    </nav-view>
+</body>
+</html>

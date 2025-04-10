@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "Pixelated MS Sans Serif";
+    src: url('./fonts/ms_sans_serif.woff2') format("woff2");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Pixelated MS Sans Serif";
+    src: url('./fonts/ms_sans_serif.woff2') format("woff2");
+    font-weight: bold;
+    font-style: normal
+}
+
+* {
+    image-rendering: pixelated;
+    -webkit-font-smoothing:none !important;
+}
+
+h1,
+h2 {
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+}
+
+h3 {
+    font-family: Verdana, Geneva, sans-serif;
+    position: relative;
+}
+h4, h5 {
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    position: relative;
+}
+
+h3::after, h4::after {
+    content: "";
+    display: block;
+    background: linear-gradient(to right, rgb(112, 191, 255) 0px, transparent 100%);
+    position: absolute;
+    bottom: 0px;
+    left: -12px;
+    height: 1px;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 17px;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-corner {
+    background: #dfdfdf;
+}
+
+::-webkit-scrollbar-thumb {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: #c8d6fb;
+    background-size: 7px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    box-shadow: inset -3px 0 #bad1fc, inset 1px 1px #b7caf5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #dfdfdf;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+::-webkit-scrollbar-track {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='2' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 0H0v1h1v1h1V1H1V0z' fill='silver'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 0H1v1H0v1h1V1h1V0z' fill='%23fff'/%3E%3C/svg%3E");
+}

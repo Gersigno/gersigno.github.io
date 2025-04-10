@@ -1,0 +1,19 @@
+toast-notification {
+    &:is(.open) {
+        animation: toast ease-out;
+    }
+    &:is(.close) {
+        animation: toast ease-out reverse;
+    }
+}
+
+@keyframes toast {
+    0% {
+        transform: translate(-50%, 200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}

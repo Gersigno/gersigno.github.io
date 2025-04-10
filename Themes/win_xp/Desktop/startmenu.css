@@ -1,0 +1,138 @@
+start-menu {
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 4px 2px;
+
+    font-size: 11px;
+    line-height: 14px;
+    background-color: rgb(66, 130, 214);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    flex-direction: column-reverse;
+
+    width: 380px;
+    height: 450px;
+
+    overflow: hidden;
+
+    header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        height: 54px;
+        padding: 6px 5px 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: linear-gradient(rgb(24, 104, 206) 0%, rgb(14, 96, 203) 12%, rgb(14, 96, 203) 20%, rgb(17, 100, 207) 32%, rgb(22, 103, 207) 33%, rgb(27, 108, 211) 47%, rgb(30, 112, 217) 54%, rgb(36, 118, 220) 60%, rgb(41, 122, 224) 65%, rgb(52, 130, 227) 77%, rgb(55, 134, 229) 79%, rgb(66, 142, 233) 90%, rgb(71, 145, 235) 100%);
+        position: relative;
+        img {
+            width: 42px;
+            height: 42px;
+            margin-right: 5px;
+            border-radius: 3px;
+            border: 2px solid rgba(222, 222, 222, 0.8);
+        }
+        p {
+            font-size: 14px;
+            font-weight: 700;
+            text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
+        }
+    }
+    header::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 0px;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, transparent 0px, rgba(255, 255, 255, 0.3) 1%, rgba(255, 255, 255, 0.5) 2%, rgba(255, 255, 255, 0.5) 95%, rgba(255, 255, 255, 0.3) 98%, rgba(255, 255, 255, 0.2) 99%, transparent 100%);
+        box-shadow: rgb(14, 96, 203) 0px -1px 1px inset;
+    }
+
+    header::after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: -2px;
+        display: block;
+        height: 2px;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(218, 136, 74) 50%, rgba(0, 0, 0, 0) 100%);
+        border: 0px;
+    }
+
+    menu:first-of-type {
+        /* Bottom menu */
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        color: rgb(255, 255, 255);
+        min-height: 36px;
+        height: 36px;
+        max-height: 36px;
+        width: -webkit-fill-available;
+        background: linear-gradient(rgb(66, 130, 214) 0%, rgb(59, 133, 224) 3%, rgb(65, 138, 227) 5%, rgb(65, 138, 227) 17%, rgb(60, 135, 226) 21%, rgb(55, 134, 228) 26%, rgb(52, 130, 227) 29%, rgb(46, 126, 225) 39%, rgb(35, 116, 223) 49%, rgb(32, 114, 219) 57%, rgb(25, 110, 219) 62%, rgb(23, 107, 216) 72%, rgb(20, 104, 213) 75%, rgb(17, 101, 210) 83%, rgb(15, 97, 203) 88%);
+        
+        button {
+            padding: 3px;
+            display: flex;
+            margin-right: 10px;
+            -webkit-box-align: center;
+            align-items: center;
+            height: 28px;
+            width: fit-content;
+            aspect-ratio: auto;
+            background-color: transparent;
+            button-icon {
+                width: 24px !important;
+                height: 24px !important;
+                background-size: 24px !important;
+            }
+        }
+        button:nth-of-type(2)::after {
+            content: 'GitHub';
+        }
+        button:nth-of-type(3)::after {
+            content: 'Settings';
+        }
+        button:nth-of-type(4)::after {
+            content: 'Turn Off Computer';
+        }
+        button:hover {
+            background-color: rgba(60, 80, 210, 0.5);
+        }
+        button:first-child {
+            display: none;
+        }
+    }
+    menu:last-of-type {
+        /* Apps list menu */
+        height: -webkit-fill-available;
+        margin-top: inherit;
+        overflow: auto;
+
+        border-top: 1px solid rgb(56, 93, 231);
+        box-shadow: rgb(56, 93, 231) 0px 1px;
+        background-color: rgb(255, 255, 255);
+        padding: 6px 5px 0px;
+
+        margin: 0px 2px;
+        .startmenu_section_title {
+            font-weight: bold;
+        }
+        .startmenu_application {
+            width: -webkit-fill-available;
+            height: 34px;
+            margin-bottom: 4px;
+            p {
+                font-size: 11px;
+
+            }
+        }
+        .startmenu_application:hover {
+            color: white;
+            background-color: rgb(47, 113, 205);
+        }
+    }
+}

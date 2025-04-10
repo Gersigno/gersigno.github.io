@@ -1,0 +1,27 @@
+body {
+    background: rgb(236, 233, 216) !important;
+}
+
+#profile_picture {
+    border-radius: 6px;
+    border: 2px solid rgba(222, 222, 222, 0.8);
+}
+
+.software_element {
+    .infos {
+        z-index: 1;
+    }
+    button {
+        position: absolute;
+        opacity: 0;
+    }
+    button:hover {
+        -webkit-box-shadow: none !important;
+    }
+    &:hover {
+        button {
+            position: relative;
+            opacity: 1;
+        }
+    }
+}

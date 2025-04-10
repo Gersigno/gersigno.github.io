@@ -1,0 +1,69 @@
+@font-face {
+	font-family: 'MesloLGS NF';
+	src: url('fonts/MesloLGS-NF-Italic.woff2') format('woff2');
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'MesloLGS NF';
+	src: url('fonts/MesloLGS-NF-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'MesloLGS NF';
+	src: url('fonts/MesloLGS-NF-Bold-Italic.woff2') format('woff2');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'MesloLGS NF';
+	src: url('fonts/MesloLGS-NF-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Cascadia Code Nerd Font";
+	font-style: normal;
+	font-weight: 200;
+	src: url('https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/complete/Caskaydia%20Cove%20Regular%20Nerd%20Font%20Complete.ttf') format('truetype');
+	font-variant-ligatures: none;
+}
+
+@font-face {
+	font-family: "Fira Code Nerd Font";
+	font-style: normal;
+	font-weight: 200;
+	src: url('https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Light/complete/Fura%20Code%20Light%20Nerd%20Font%20Complete.ttf') format('truetype');
+	font-variant-ligatures: none;
+}
+
+@font-face {
+	font-family: "Fira Code Nerd Font";
+	font-style: normal;
+	font-weight: 400;
+	src: url('https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Retina/complete/Fura%20Code%20Retina%20Nerd%20Font%20Complete.ttf') format('truetype');
+	font-variant-ligatures: none;
+}
+
+@font-face {
+	font-family: "Fira Code Nerd Font";
+	font-weight: 600;
+	src: url('https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Medium/complete/Fura%20Code%20Medium%20Nerd%20Font%20Complete.ttf') format('truetype');
+	font-variant-ligatures: none;
+}
+
+@font-face {
+	font-family: "Fira Code Nerd Font";
+	font-weight: 800;
+	src: url('https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Bold/complete/Fura%20Code%20Bold%20Nerd%20Font%20Complete.ttf') format('truetype');
+	font-variant-ligatures: none;
+}

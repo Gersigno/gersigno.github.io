@@ -1,0 +1,18 @@
+.software_element {
+    .infos {
+        z-index: 1;
+    }
+    button {
+        position: absolute;
+        opacity: 0;
+    }
+    button:hover {
+        -webkit-box-shadow: none !important;
+    }
+    &:hover {
+        button {
+            position: relative;
+            opacity: 1;
+        }
+    }
+}

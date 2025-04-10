@@ -1,0 +1,30 @@
+#desktop_icons_grid {
+    padding-top: 4px;
+    padding-left: 8px;
+    gap: 0px;
+}
+
+desktop-icon {
+    width: 100px;
+    height: 80px;
+    img {
+        filter: drop-shadow(0 0px 0px 1px #fff);
+        width: 35%;
+    }
+    p {
+        font-family: "Pixelated MS Sans Serif", Arial;
+        -webkit-font-smoothing: antialiased;
+        background-color: rgb(2 0 132);
+        margin: 1px;
+        color: white;
+    }
+}
+
+desktop-icon:hover {
+    background-color: transparent;
+    filter: brightness(1.2);
+}
+
+desktop-icon:focus, desktop-icon:focus-visible, desktop-icon:focus-within {
+    outline: 1px dotted #000;
+}
