@@ -124,6 +124,10 @@ export default class NavView extends HTMLElement {
     toggleCollapse() {
         this.#menu.classList.toggle("collapsed");
         window.top.postMessage('gwin_pageresize', '*'); //post message to top window to catch it from all other iframe, act like an event
+        if(this.#menu.classList.contains('collapsed') && window.top.system.services.settings.current.theme_name == 'win_xp') {
+            // If current theme is windows xp, revert collapsed status of nav menu
+            this.#menu.classList.remove("collapsed");
+        }
     }
 
     switchPage(element) {

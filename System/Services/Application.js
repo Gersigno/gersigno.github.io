@@ -33,7 +33,7 @@ export default class Application {
 
     static async getAll() {
         let list;
-        await fetch(`/Applications/.applicationList.json?p=${Math.random()}`).then(async (response) => {
+        await fetch(`/Applications/applicationList.json?p=${Math.random()}`).then(async (response) => {
             if (response.ok) {
                 list = await response.json();
             } else {
