@@ -6,6 +6,8 @@
 <h3 align="center">A beautiful, fluent, web OS like online portfolio !</h3>
 <br>
 
+<img src="https://raw.githubusercontent.com/Gersigno/gersigno.github.io/refs/heads/main/resources/Previews/preview_themes.gif">
+
 ###### Make sure to star ⭐ this repo if you enjoy my work !
 
 # 👋 Introduction
@@ -13,7 +15,6 @@
 ###  <a href="https://gersigno.github.io/">🔗 Test it right now</a>
 
 ## 🧩 Roadmap
-
 - Additional browser support
 - Full responsive *(not finished yet)*
 - More themes

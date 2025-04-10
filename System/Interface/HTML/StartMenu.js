@@ -28,7 +28,7 @@ export default class StartMenu extends HTMLElement {
     }
 
     #handleClick = (event) => {
-        if(!this.contains(event.target) && event.target.id != "super") {
+        if (!this.contains(event.target) && event.target.id != "super") {
             document.removeEventListener("mousedown", this.#handleClick);
             this.remove();
         }
@@ -38,13 +38,13 @@ export default class StartMenu extends HTMLElement {
      * Build the left part of our start menu, aka the shutdown, account, settings and collapse buttons
      */
     #buildLeftMenu() {
-        const btn_collapse  = document.createElement("button");
-        const btn_account   = document.createElement("button");
-        const btn_settings  = document.createElement("button");
-        const btn_shutdown  = document.createElement("button");
+        const btn_collapse = document.createElement("button");
+        const btn_account = document.createElement("button");
+        const btn_settings = document.createElement("button");
+        const btn_shutdown = document.createElement("button");
 
         const icon_collapse = document.createElement("button-icon");
-        const icon_account  = document.createElement("button-icon");
+        const icon_account = document.createElement("button-icon");
         const icon_settings = document.createElement("button-icon");
         const icon_shutdown = document.createElement("button-icon");
 
@@ -64,6 +64,20 @@ export default class StartMenu extends HTMLElement {
         icon_shutdown.setAttribute("size", "small");
         btn_shutdown.appendChild(icon_shutdown);
 
+        btn_account.addEventListener("click", () => {
+            window.open("https://github.com/Gersigno/gersigno.github.io", "_blank");
+        });
+
+        btn_settings.addEventListener("click", () => {
+            Application.start('Settings');
+        });
+
+        btn_shutdown.addEventListener("click", () => {
+            if (confirm("Are you sure to close this page ? \n(You will be redirected to my GitHub profile)")) {
+                window.location.href = "https://github.com/Gersigno";
+            }
+        });
+
         this.#elements.left_menu.appendChild(btn_collapse);
         this.#elements.left_menu.appendChild(btn_account);
         this.#elements.left_menu.appendChild(btn_settings);
@@ -77,11 +91,11 @@ export default class StartMenu extends HTMLElement {
     async #getApplications() {
         const list = await Application.getAll();
         const sortedList = Object.keys(list)
-        .sort((a, b) => list[a].display_name.localeCompare(list[b].display_name))
-        .reduce((acc, key) => {
-            acc[key] = list[key];
-            return acc;
-        }, {});
+            .sort((a, b) => list[a].display_name.localeCompare(list[b].display_name))
+            .reduce((acc, key) => {
+                acc[key] = list[key];
+                return acc;
+            }, {});
         return sortedList;
     }
 

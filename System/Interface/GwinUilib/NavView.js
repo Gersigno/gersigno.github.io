@@ -61,6 +61,10 @@ export default class NavView extends HTMLElement {
             this.toggleCollapse();
         }
 
+        this.#native_button.settings.onclick = () => {
+            window.top.system.services.toast.newToast(`/Themes/${window.top.system.services.settings.current.theme_name}/Icons/warning.png`, "Error", "This page is not done yet !");
+        }
+
         main.appendChild(this.#title);
         main.appendChild(this.#content);
 
