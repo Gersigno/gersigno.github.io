@@ -16,7 +16,7 @@ import Application          from '/System/Services/Application.js';
 export default class System {    
 
     #infos = {
-        version:    'Beta-2.0.1'
+        version:    'Beta-2.0.2'
     };
 
     #core = {
@@ -64,7 +64,7 @@ export default class System {
         }
 
         setTimeout(() => {
-            system.services.toast.newToast("favicon.png", "Beta version", "This website is still in development !");
+            system.services.toast.newToast("/resources/gwp_logo_icon.png", "Beta version", "This website is still in development !");
         }, 1000);
     }
 
