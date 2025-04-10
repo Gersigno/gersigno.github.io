@@ -1,9 +1,0 @@
-.background_blur {
-    backdrop-filter: blur(var(--blur-level));
-    -webkit-backdrop-filter: blur(var(--blur-level));
-    -moz-backdrop-filter: blur(var(--blur-level));
-    -o-backdrop-filter: blur(var(--blur-level));
-
-    background-image: url("../resources/materials/noise.png");
-    background-repeat: repeat;
-}

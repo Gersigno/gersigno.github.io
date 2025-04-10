@@ -1,0 +1,37 @@
+{
+    "Whoami": {
+        "icon_description": "Who am i ?",
+        "text": "Who am i ?",
+        "open_command": "Application.start('Whoami')"
+    },
+    "Projects": {
+        "icon_description": "An icon of a folder with a piece of puzzle on it",
+        "text": "My Projects",
+        "open_command": "Application.start('Projects')"
+    },
+    "Discord": {
+        "icon_description": "Discord's icon",
+        "text": "Discord Server",
+        "open_command": "Application.start('Discord')"
+    },
+    "Settings": {
+        "icon_description": "UI Library",
+        "text": "Settings",
+        "open_command": "Application.start('Settings')"
+    },
+    "Changelogs": {
+        "icon_description": "An icon of a folder with a piece of puzzle on it",
+        "text": "Changelogs",
+        "open_command": "Application.start('Changelogs')"
+    },
+    "Credits": {
+        "icon_description": "An icon of a heart",
+        "text": "Credits",
+        "open_command": "Application.start('Credits')"
+    },
+    "Bugreport": {
+        "icon_description": "An icon of a bug",
+        "text": "Bug/Issue report",
+        "open_command": "window.open('https://github.com/Gersigno/gersigno.github.io/issues/new','_blank');"
+    }
+}

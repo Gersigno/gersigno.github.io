@@ -1,0 +1,17 @@
+:root {
+    --default-font: "Rubik", sans-serif;
+
+    --color-darker: #004578;
+    --color-dark: #005a9e;
+    --color-darkalt: #106ebe;
+    --color-primary: #0078da;
+    --color-secondary: #2b88d8;
+    --color-tertiary: #71afe5;
+    --color-light: #c7e0f4;
+    --color-lighter: #deecf9;
+    --color-lighteralt: #eff6fc;
+
+    --taskbar-height: 50px;
+
+    --var-taskbar-icon-hover-color: #ffffff;
+}

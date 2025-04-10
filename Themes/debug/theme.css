@@ -1,0 +1,19 @@
+#desktop {
+    position: relative;
+    background-color: red;
+}
+
+desktop-icon {
+    position: relative;
+    border: 2px dotted lime;
+}
+
+#taskbar {
+    position: relative;
+    background-color: purple;
+}
+
+#super {
+    position: relative;
+    background-color: orange;
+}

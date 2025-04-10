@@ -1,0 +1,65 @@
+/* body {
+    overflow: inherit !important;
+
+    padding: 10vh 10vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+
+    height: fit-content !important;
+} */
+
+body {
+    padding-top: 26px;
+    position: relative;
+    overflow: hidden;
+}
+
+.whoami_container {
+    overflow: auto;
+    padding: 10vh 10vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    height: 100vh;
+    position: absolute;
+    inset: 0;
+}
+
+b {
+    color: var(--color-primary);
+}
+
+#introduction {
+    display: flex;
+    align-items: center;
+
+    div {
+        margin-left: 5vw;
+    }
+}
+
+#profile_picture {
+    height: 15vw;
+    width: 15vw;
+
+    max-width: 255px;
+    max-height: 255px;
+
+    border-radius: 1000px;
+}
+
+#teckstack_layer {
+    display: flex;
+    section {
+        width: 50%;
+        h5 {
+            margin-bottom: 2vh;
+        }
+        p {
+            margin-top: 2vh;
+            font-weight: bold;
+        }
+    }
+}

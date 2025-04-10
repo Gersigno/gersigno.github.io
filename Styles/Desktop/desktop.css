@@ -1,0 +1,53 @@
+#desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--taskbar-height));
+
+    display: flex;
+    flex-direction: column;
+}
+
+#desktop_icons_grid {
+    width: 100%;
+    height: -webkit-fill-available;
+    display: flex;
+    justify-items: start;
+    align-items: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 100px;
+    height: 110px;
+
+    cursor: pointer;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    img {
+        width: 60%;
+        aspect-ratio: 1;
+        pointer-events: none;
+    }
+    p {
+        font-size: small;
+        font-family: var(--default-font);
+        pointer-events: none;
+        text-align: center;
+    }
+}
+
+desktop-icon:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}

@@ -1,0 +1,20 @@
+{
+    "win_xp": {
+        "display_name": "Windows XP",
+        "created_by": "Gersigno",
+        "credits": ["Microsoft"],
+        "debug_only": false
+    },
+    "win_10": {
+        "display_name": "Windows 10",
+        "created_by": "Gersigno",
+        "credits": ["Microsoft"],
+        "debug_only": false
+    },
+    "win_11": {
+        "display_name": "Windows 11",
+        "created_by": "Gersigno",
+        "credits": ["Microsoft"],
+        "debug_only": false
+    }
+}

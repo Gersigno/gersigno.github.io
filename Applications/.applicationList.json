@@ -1,0 +1,50 @@
+{
+    "Devtool": {
+        "display_name": "Developer tool",
+        "single_process_only": true
+    },
+    "Hangman": {
+        "display_name": "Hangman",
+        "single_process_only": false
+    },
+    "Uilib": {
+        "display_name": "GwinUilib",
+        "single_process_only": false,
+        "no_header": true
+    },
+    "Settings": {
+        "display_name": "Settings",
+        "single_process_only": true,
+        "no_header": true
+    },
+    "ToDoList": {
+        "display_name": "ToDoList",
+        "single_process_only": true
+    },
+    "Projects": {
+        "display_name": "My projects",
+        "single_process_only": false,
+        "no_header": true
+    },
+    "Whoami": {
+        "display_name": "Who am i ?",
+        "single_process_only": false,
+        "no_header": true
+    },
+    "Discord": {
+        "display_name": "Discord Server",
+        "single_process_only": true,
+        "no_header": true
+    },
+    "Changelogs": {
+        "display_name": "Changelogs",
+        "single_process_only": false,
+        "no_header": true
+    }
+    ,
+    "Credits": {
+        "display_name": "Credits",
+        "single_process_only": false,
+        "no_header": true
+    }
+}

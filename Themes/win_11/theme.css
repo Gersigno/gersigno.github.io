@@ -1,0 +1,24 @@
+@import "./Wallpaper/wallpaper.css";
+@import "./Variables/variables.css";
+
+@import "./Desktop/desktop.css";
+@import "./Desktop/notifications.css";
+@import "./Desktop/taskbar.css";
+@import "./Desktop/startmenu.css";
+
+@import "./Applications/projects.css";
+@import "./Applications/whoami.css";
+@import "./Applications/application.css";
+
+@import "./Interface/carousel.css";
+@import "./Interface/interface.css";
+@import "./Interface/inputs.css";
+@import "./Interface/icons.css";
+
+.hidden_win11 {
+    display: none;
+}
+
+* {
+    scroll-behavior: smooth;
+}

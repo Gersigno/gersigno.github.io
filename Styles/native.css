@@ -1,0 +1,28 @@
+* {
+    font-family: var(--default-font);
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    /* ::-webkit-scrollbar:first-of-type {
+        width: 40px !important;
+    } */
+}
+
+p, span, a {
+    font-size: small;
+}
+
+.hidden {
+    display: none !important;
+}

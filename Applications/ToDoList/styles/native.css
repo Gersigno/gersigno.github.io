@@ -1,0 +1,75 @@
+* {
+    font-family: system-ui;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    height: fit-content !important;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80% !important;
+    padding-top: 5vh;
+
+    background-color: inherit !important;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    div {
+        display: flex;
+        justify-content: flex-end;
+    }
+    button {
+        margin: 0px;
+    }
+}
+
+ol {
+    padding-top: 5px;
+}
+
+button {
+    margin: 2px;
+    padding: 8px;
+    transition: 200ms;
+    background-color: transparent;
+    border: 1px solid var(--color-border-inactive);
+    border-radius: 8px;
+    width: auto;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-hover);
+}
+
+input {
+    border: 1px solid var(--color-border-inactive);
+    border-radius: 8px;
+    padding: 2px;
+}
+
+input[type="checkbox"] {
+    pointer-events: none;
+}
+
+p {
+    opacity: 0.75;
+}

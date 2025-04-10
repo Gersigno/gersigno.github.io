@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <nav-view>
+        <!-- Buttons -->
+        <nav-view-button page_id="home">
+            <button-icon icon="home" size="small"></button-icon>
+            <p>Home</p>
+        </nav-view-button>
+
+        <nav-view-button page_id="web">
+            <button-icon icon="www" size="small"></button-icon>
+            <p>Web</p>
+        </nav-view-button>
+
+        <nav-view-button page_id="software">
+            <button-icon icon="window" size="small"></button-icon>
+            <p>Software</p>
+        </nav-view-button>
+
+        <!-- Pages -->
+        <nav-view-page page_id="home" id="home_page">
+            <p>A curated collection of my <b>development work from web to software projects</b> <i>(will soon include some video games prototypes made by myself)</i>.</p>
+            <p>Whether you're a recruiter looking to <b>explore my technical skills</b> or simply <b>curious about what I've been working on</b>, you'll find code, concepts, and GitHub links that <b>highlight both my creativity and engineering mindset.</b></p>
+            <br>
+            <p>Dive in and take a closer look!</p>
+        </nav-view-page>
+
+        <nav-view-page page_id="web" id="web_page">
+            <section>
+                <div class="gwin_carousel">
+                    <div class="gwin_carousel_track_container">
+                        <ul class="gwin_carousel_track">
+                            <li class="gwin_carousel_slide gwin_carousel_slide_current">
+                                <img src="./Resources/preview_livecoding.png" alt="Project 2">
+                                <div class="gwin_carousel_slide_infos">
+                                    <h3>LiveCoding</h3>
+                                    <h5>An online collaborative IDE made in native PHP. Collaborate, code, and create together in real-time.</h5>
+                                    <button class="button" onclick="location.hash = '#preview_livecoding'">&gt; View more details</button>
+                                </div>
+                            </li>
+                            <li class="gwin_carousel_slide">
+                                <img src="https://raw.githubusercontent.com/Gersigno/ToDoList-PHP/main/repo-resources/preview.png" alt="Project 1">
+                                <div class="gwin_carousel_slide_infos">
+                                    <h3>ToDoList PHP</h3>
+                                    <h5>A novice-friendly ToDoList using PHP, JavaScript, HTML & CSS featuring a complet CRUD and user-based tasks system.</h5>
+                                    <button class="button" onclick="window.open('https://github.com/Gersigno/ToDoList-PHP','_blank');">↪ View repository</button>
+                                </div>
+                            </li>
+                            <li class="gwin_carousel_slide">
+                                <img src="https://raw.githubusercontent.com/Gersigno/ToDoList-in-JavaScript-using-localStorage/main/Previews/preview.png" alt="Project 3">
+                                <div class="gwin_carousel_slide_infos">
+                                    <h3>ToDoList JavaScript</h3>
+                                    <h5>A simple ToDoList made in JavaScript using LocalStorage with an HTML/CSS interface (Fully commented/documented)</h5>
+                                    <button class="button" onclick="location.hash = '#preview_todolist'">&gt; View more details</button>
+                                </div>
+                            </li>
+                            <li class="gwin_carousel_slide">
+                                <img src="https://raw.githubusercontent.com/Gersigno/Hangman-Javascript/refs/heads/main/resources/previews/preview.png" alt="Project 3">
+                                <div class="gwin_carousel_slide_infos">
+                                    <h3>Hangman Game in JavaScript</h3>
+                                    <h5>A simple JavaScript Hangman game with an HTML/CSS interface and different difficulties (French words dictionary).</h5>
+                                    <button class="button" onclick="location.hash = '#preview_hangman'">&gt; View more details</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="gwin_carousel_button left"></button>
+                    <button class="gwin_carousel_button right"></button>
+                </div>
+            </section>
+            <br>
+            <h3>LiveCoding</h3>
+            <section class="gwin_section" id="preview_livecoding">
+                <p>An innovative <b>online collaborative IDE</b>, enabling developers to <b>work together in real-time.</b></p>
+                <p>Features include live code editing, seamless teamwork, and an intuitive interface designed to <b>boost productivity and creativity.</b></p>
+                <p>Perfect for <b>remote collaboration and team-based development projects.</b></p>
+                <br>
+                <p>💡<i>LiveCoding is a project that I started in 2024 during my Web development training.</i></p>
+                <p><i>It was made with native PHP, JavaScript, HTML and CSS, from scratch.</i></p>
+                <video autoplay="autoplay" loop="loop" muted="muted">
+                    <source src="./Resources/Livecoding_preview.mp4" type="video/mp4">
+                    Your browser does not support the HTML5 Video element.
+                </video>
+                <h5>Features</h5>
+                <ul id="livecoding_features">
+                    <li>Account creation</li>
+                    <li>Notifications system</li>
+                    <li>Users profile <i>with custom profile picture, banner and biography</i></li>
+                    <li>Profile reputation (give positive notes to peoples)</li>
+                    <li>Private messages</li>
+                    <li>Projects creation/managements</li>
+                    <li>Project invitations system</li>
+                    <li>Light/Dark mode</li>
+                    <p>...</p>
+                </ul>
+            </section>
+            <br>
+            <h3>ToDoList <i>(JavaScript)</i></h3>
+            <section class="gwin_section" id="preview_todolist">
+                <p>A simple <b>ToDoList made in JavaScript</b> using <b>LocalStorage</b> with an HTML/CSS interface <i>(Fully commented/documented)</i></p>
+                <p>Features include adding, editing, and deleting tasks, as well as a user-friendly interface.</p>
+                <p>Perfect for <b>managing your daily tasks</b> and <b>improving productivity.</b></p>
+                <br>
+                <p>💡<i>This project was made during my Web development training.</i></p>
+                <p><i>It was made with JavaScript, HTML and CSS.</i></p>
+                <button class="button" onclick="window.open('https://github.com/Gersigno/ToDoList-in-JavaScript-using-localStorage','_blank');">View source code on GitHub</button>
+                <button class="button button_action" onclick="window.top.system.run('ToDoList')">Try it right now</button>
+            </section>
+            <br>
+            <h3>Hangman</h3>
+            <section class="gwin_section" id="preview_hangman">
+                <p>The famous <b>Hangman game made in JavaScript</b> with an HTML/CSS interface and different difficulties !</p>
+                <p>The hangman is a word guessing game, it include multiple difficulty levels.</p>
+                <p>Warning : the words dictionary is in french only !</p>
+                <button class="button" onclick="window.open('https://github.com/Gersigno/Hangman-Javascript','_blank');">View source code on GitHub</button>
+                <button class="button button_action" onclick="window.top.system.run('Hangman')">Try it right now</button>
+            </section>
+        </nav-view-page>
+        
+        <nav-view-page page_id="software">
+            <div id="software_list">
+                <section class="software_element">
+                    <img class="preview_full" src="./Resources/preview_snakecpp.png" alt="">
+                    <div class="infos">
+                        <h5>Terminal snake</h5>
+                        <p>C++</p>
+                        <button class="button" onclick="location.hash = '#preview_snakecpp'">&gt; View more details</button> 
+                    </div>
+                </section>
+                <section class="software_element">
+                    <img class="preview_full" src="./Resources/preview_quicktheme.png" alt="">
+                    <div class="infos">
+                        <h5>Quick Theme</h5>
+                        <p>C#, Xaml, WinUI</p>
+                        <button class="button" onclick="location.hash = '#preview_quicktheme'">&gt; View more details</button> 
+                    </div>
+                </section>
+            </div>
+            <br>
+            <h3>Terminal Snake</h3>
+            <section class="gwin_section" id="preview_snakecpp">
+                <p>The famous <b>snake game, made in C++</b>, in your Terminal.</p>
+                <p>This project is <b>multi-OS</b> compatible <i>(Windows, MacOS and Linux)</i></p>
+                <br>
+                <p>💡<i>I am currently remaking this project from scratch, the source code isn't available as the project isn't done yet, stay tuned on my GitHub!</i></p>
+            </section>
+            <br>
+            <h3>Quick Theme</h3>
+            <section class="gwin_section" id="preview_quicktheme">
+                <p>Quick Theme is a <b>Windows only application</b> that allows you to quickly change your Windows theme.</p>
+                <p>It is made in C# and use WinUI 3.</p>
+                <br>
+                <p>💡<i>This project is currently in development, the source code isn't available yet.</i></p>
+            </section>
+        </nav-view-page>
+    </nav-view>
+</body>
+</html>

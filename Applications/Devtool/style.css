@@ -1,0 +1,16 @@
+.horizontal {
+    display: flex;
+}
+
+#event-select, #window-message-input {
+    width: -webkit-fill-available;
+}
+
+#event-button {
+    text-wrap-mode: nowrap;
+}
+
+#window-message-textarea {
+    resize: none;
+    height: 100px;
+}

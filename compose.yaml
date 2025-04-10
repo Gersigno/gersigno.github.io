@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    image: php:8.2-apache
+    container_name: portfolio
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+      - ./Logs:/var/log/apache2

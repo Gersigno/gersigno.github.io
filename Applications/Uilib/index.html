@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav-view>
+        <!-- Buttons -->
+        <nav-view-button page_id="home">
+            <button-icon icon="home" size="small"></button-icon>
+            <p>Home</p>
+        </nav-view-button>
+
+        <nav-view-button page_id="texts">
+            <button-icon icon="text" size="small"></button-icon>
+            <p>Texts</p>
+        </nav-view-button>
+
+        <nav-view-button page_id="inputs">
+            <button-icon icon="input" size="small"></button-icon>
+            <p>Inputs</p>
+        </nav-view-button>
+
+        <nav-view-button page_id="players">
+            <button-icon icon="player" size="small"></button-icon>
+            <p>Players</p>
+        </nav-view-button>
+
+        <!-- Pages -->
+        <nav-view-page page_id="home">
+            <h3>Welcome to the GwinUilib demo !</h3>
+            <p>This is a debug page designed to display a comprehensive set of HTML elements.</p>
+            <p>Its purpose is to visually test and verify how each component is rendered across the different custom themes.</p>
+            <p>Use this space to ensure consistent styling and catch any theme-specific UI issues.</p>
+            <br>
+            <p>Todo:</p>
+            <p> - Documentation</p>
+            <p> - Window specific settings page (nav-view bottom button)</p>
+        </nav-view-page>
+
+        <nav-view-page page_id="texts">
+            <h1>h1 Title</h1>
+            <h2>h2 Title</h2>
+            <h3>h3 Title</h3>
+            <h4>h4 Title</h4>
+            <h5>h5 Title</h5>
+            <h6>h6 Title</h6>
+            <p>p Text</p>
+            <span>span Text</span> 
+            <a href="#">a link</a>
+        </nav-view-page>
+        
+        <nav-view-page page_id="inputs">
+            <label for="text">Type text</label> 
+            <input type="text" name="text" placeholder="Placeholder"> 
+
+            <label for="password">Type password</label> 
+            <input type="password" name="password" placeholder="Placeholder"> 
+
+            <label for="email">Type email</label> 
+            <input type="email" name="email" placeholder="Placeholder"> 
+
+            <label for="number">Type number</label> 
+            <input type="number" name="number" placeholder="Placeholder"> 
+
+            <label for="date">Type date</label> 
+            <input type="date" name="date" placeholder="Placeholder"> 
+
+            <label for="time">Type time</label>
+            <input type="time" name="time" placeholder="Placeholder"> 
+
+            <label for="color">Type color</label> 
+            <input type="color" name="color" placeholder="Placeholder"> 
+
+            <label for="range">Type range</label> 
+            <input type="range" name="range" placeholder="Placeholder"> 
+
+            <label for="file">Type file</label> 
+            <input type="file" name="file" placeholder="Placeholder"> 
+
+            <label for="submit">Type submit</label> 
+            <input type="submit" name="submit" placeholder="Placeholder"> 
+
+            <label for="reset">Type reset</label> 
+            <input type="reset" name="reset" placeholder="Placeholder"> 
+
+            <label for="radio">Type radio</label> 
+            <input type="radio" name="radio" placeholder="Placeholder"> 
+
+            <label for="checkbox">Type checkbox</label> 
+            <input type="checkbox" name="checkbox" placeholder="Placeholder"> 
+
+            <label for="checkbox">Type checkbox <i>(Switch)</i></label> 
+            <input type="checkbox" name="checkbox" placeholder="Placeholder" class="gwin_switch"> 
+
+            <label for="select">Select</label> 
+            <select name="select" id="select">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select> 
+
+            <label for="textarea">Textarea</label> 
+            <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea> 
+
+            <button class="button">Button</button>
+        </nav-view-page>
+
+        <nav-view-page page_id="players">
+            <p>Audio player</p>
+            <audio controls="controls">
+                <source src="./Resources/t-rex-roar.mp3" type="audio/mpeg">
+                Your browser does not support the HTML5 Audio element.
+            </audio>
+
+            <p>Video player</p>
+            <video controls="controls">
+                <source src="./Resources/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the HTML5 Video element.
+            </vid>
+        </nav-view-page>
+    </nav-view>
+</body>
+</html>

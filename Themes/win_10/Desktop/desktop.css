@@ -1,0 +1,44 @@
+#desktop_icons_grid {
+    padding-top: 8px;
+    padding-left: 3px;
+    gap: 12px;
+}
+
+desktop-icon {
+    width: 100px;
+    height: 100px;
+    img {
+        filter: drop-shadow(0 2px 4px #00000030);
+        width: 50%;
+    }
+    p {
+        font-weight: 400;
+        text-rendering: optimizeSpeed;
+        color: var(--color-lighteralt);
+        text-shadow: 0 3px 6px #00000070;
+    }
+}
+
+desktop-icon:hover {
+    outline-width: 2px;
+    outline-color: color-mix(in srgb, var(--color-light) 50%, transparent);
+    outline-style: double;
+
+    background-color: color-mix(in srgb, var(--color-light) 35%, transparent);
+}
+
+desktop-icon:focus-visible {
+    background-color: color-mix(in srgb, var(--color-light) 35%, transparent);
+    outline-color: white;
+    outline-width: 1px;
+    outline-style: dotted;
+    border: 1px dotted white;
+}
+
+desktop-icon:focus, desktop-icon:focus-within {
+    outline-width: 2px;
+    outline-color: color-mix(in srgb, var(--color-light) 50%, transparent);
+    outline-style: double;
+
+    background-color: color-mix(in srgb, var(--color-light) 35%, transparent);
+}

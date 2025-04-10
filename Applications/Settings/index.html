@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <nav-view>
+        <nav-view-button page_id="home">
+            <button-icon icon="home" size="small"></button-icon>
+            <p>Home</p>
+        </nav-view-button>
+
+        <nav-view-button page_id="system">
+            <button-icon icon="system" size="small"></button-icon>
+            <p>System</p>
+        </nav-view-button>
+
+        <nav-view-button page_id="customize">
+            <button-icon icon="theme" size="small"></button-icon>
+            <p>Customize</p>
+        </nav-view-button>
+
+        <nav-view-button page_id="accessibility">
+            <button-icon icon="accessibility" size="small"></button-icon>
+            <p>Accessibility</p>
+        </nav-view-button>
+
+        <!-- Pages -->
+
+        <nav-view-page page_id="home">
+            <p>Your space to <b>personalize the look and feel of my portfolio !</b></p>
+            <p>Here, you can <b>switch between themes</b> to match your vibe, whether you're feeling the modern smoothness of <b>Windows 11</b>, the familiarity of <b>Windows 10</b>, or the nostalgic charm of <b>Windows XP</b></p>
+            <br>
+            <p>Make yourself at home and customize the interface to suit your style!</p>
+            <br>
+            <p>Todo :</p>
+            <p> - Theme color personalization</p>
+            <p> - MacOS like theme</p>
+            <p> - Xfce or Gnom like theme ?</p>
+        </nav-view-page>
+        
+        <nav-view-page page_id="system">
+            <section>
+                <label for="devmode_toggle">Dev mode</label>
+                <input type="checkbox" value="false">
+            </section>
+            
+        </nav-view-page>
+
+        <nav-view-page page_id="customize">
+            <section class="gwin_section">
+                <
+                <label for="select">Theme</label> 
+                <select name="select" id="theme_dropdown">
+                </select> 
+            </section>
+        </nav-view-page>
+
+        <nav-view-page page_id="accessibility">
+            <p>accessibility</p>
+        </nav-view-page>
+    </nav-view>
+</body>
+</html>

@@ -1,0 +1,56 @@
+#taskbar {
+    height: var(--taskbar-height);
+    background-color: color-mix(in srgb, var(--color-lighteralt) 50%, transparent);
+    backdrop-filter: blur(15px);
+}
+
+#super {
+    background-color: transparent;
+
+    aspect-ratio: 16/13;
+    
+    &:not(:hover) {
+        /* Reset filter on not hovered */
+        filter: invert() !important;
+    }
+
+    img {
+        height: calc(100% / 1.8);
+        aspect-ratio: 1/1;
+    }
+}
+#super:hover {
+    filter: var(--var-taskbar-icon-hover-color);
+    background-color: color-mix(in srgb, var(--color-lighter) 15%, transparent);
+}
+
+#taskbar_applist {
+    display: flex;
+    gap: 4px;
+    button {
+        position: relative;
+        aspect-ratio: 16/13;
+
+        transition: 200ms;
+
+        img {
+            height: calc(100% / 1.1);
+            aspect-ratio: 1/1;
+        }
+    }
+    button::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        right: 10%;
+        height: 3px;
+        background-color: var(--color-secondary);
+        transition: 200ms;
+    }
+    button:is(.focused)::after {
+        left: 0;
+        width: 100%;
+        transition: 200ms;
+    }
+}

@@ -1,0 +1,40 @@
+#web_page {
+    margin: 14px -2px inherit -2px;
+}
+
+.gwin_section {
+    background-color: color-mix(in srgb, grey 10%, transparent) !important;
+}
+
+#livecoding_features > li {
+    font-size: small;
+    margin-left: 20px;
+}
+#preview_livecoding > video {
+    margin: 2vh 0;
+    width: -webkit-fill-available;
+}
+
+#software_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.software_element {
+    position: relative;
+    width: calc(50% - 8px); /* half parent size - element total x margin */
+    margin: 4px;
+    overflow: hidden;
+    .infos {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+
+        color: var(--color-lighteralt);
+    }
+}
+
+.preview_full {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
