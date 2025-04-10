@@ -6,7 +6,7 @@ export default class Desktop {
         items_list: undefined
     };
     #shortcuts = [];
-    #path_list_file = "/System/.desktopShortcuts.json";
+    #path_list_file = "/System/desktopShortcuts.json";
 
     get elements() {
         return this.#elements;
