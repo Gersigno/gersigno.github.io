@@ -12,6 +12,10 @@ export default class ToastNotification extends HTMLElement {
         super();
     }
 
+    set duration(value) {
+        this.#delay = value;
+    }
+
     /**
      * Initilisation of our toast notification
      */

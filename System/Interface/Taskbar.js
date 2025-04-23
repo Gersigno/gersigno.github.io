@@ -89,7 +89,7 @@ export default class Taskbar {
         const date = datetime.toLocaleDateString();
         const time = datetime.toLocaleTimeString();
         
-        this.#elements.time.innerText = time;
+        this.#elements.time.innerText = time.replace(`:${datetime.getSeconds()}`, "");
         this.#elements.date.innerText = date;
 
         section.appendChild(this.#elements.time);
@@ -103,7 +103,7 @@ export default class Taskbar {
             const date = datetime.toLocaleDateString();
             const time = datetime.toLocaleTimeString();
             
-            this.#elements.time.innerText = time;
+            this.#elements.time.innerText = time.replace(`:${datetime.getSeconds()}`, "");
             this.#elements.date.innerText = date;
 
             this.#updateDateTime();

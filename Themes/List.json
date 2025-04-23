@@ -1,19 +1,22 @@
 {
     "win_xp": {
         "display_name": "Windows XP",
-        "created_by": "Gersigno",
-        "credits": ["Microsoft"],
+        "author": "Gersigno",
+        "description": "A theme that mimics the nostalgic Windows XP look.",
+        "credits": ["Microsoft", "ShizukuIchi", "botoxparty"],
         "debug_only": false
     },
     "win_10": {
         "display_name": "Windows 10",
-        "created_by": "Gersigno",
+        "author": "Gersigno",
+        "description": "A theme that mimics the classic Windows 10 look.",
         "credits": ["Microsoft"],
         "debug_only": false
     },
     "win_11": {
         "display_name": "Windows 11",
-        "created_by": "Gersigno",
+        "author": "Gersigno",
+        "description": "A theme that mimics the modern Windows 11 look.",
         "credits": ["Microsoft"],
         "debug_only": false
     }

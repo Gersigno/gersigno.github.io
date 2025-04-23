@@ -50,6 +50,7 @@ export default class ThemeManager {
             });
             this.#updateIcons();
             document.dispatchEvent(System.events.theme_loaded);
+            window.postMessage("theme_update", "*");
         }
     }
 

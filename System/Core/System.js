@@ -16,7 +16,7 @@ import Application          from '/System/Services/Application.js';
 export default class System {    
 
     #infos = {
-        version:    'Beta-2.0.2'
+        version:    'Beta-2.1.0'
     };
 
     #core = {
