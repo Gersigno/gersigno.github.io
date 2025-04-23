@@ -17,11 +17,11 @@ select {
     -webkit-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
 
     &:hover {
-        background-color: color-mix(in srgb, grey 5%, white);
+        background-color: color-mix(in srgb, grey 7%, white);
     }
 
     &:focus-within, &:focus {
-        -webkit-box-shadow: inset 0 -2px 0 var(--color-primary) !important;
+        -webkit-box-shadow: inset 0 -2px 0 var(--color-primary);
     }
 }
 
@@ -34,14 +34,14 @@ input[type="reset"] {
     border: 1px solid color-mix(in srgb, grey 20%, white);
     background-color: white;
     border-radius: 4px;
-    -webkit-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white) !important;
+    -webkit-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white) ;
 
     &:hover {
-        background-color: color-mix(in srgb, grey 5%, white);
+        background-color: color-mix(in srgb, grey 7%, white);
     }
 
     &:focus-within, &:focus {
-        -webkit-box-shadow: inset 0 -2px 0 var(--color-primary) !important;
+        -webkit-box-shadow: inset 0 -2px 0 var(--color-primary);
     }
 }
 

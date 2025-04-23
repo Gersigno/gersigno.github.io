@@ -8,6 +8,7 @@
 @import "./Desktop/startmenu.css";
 
 @import "./Applications/projects.css";
+@import "./Applications/settings.css";
 @import "./Applications/application.css";
 
 @import "./Interface/carousel.css";

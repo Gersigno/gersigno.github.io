@@ -6,6 +6,7 @@
     <title>Document</title>
 
     <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <nav-view>
@@ -52,10 +53,21 @@
         </nav-view-page>
 
         <nav-view-page page_id="customize">
+            <h4>Theme</h4>
             <section class="gwin_section">
-                <label for="select">Theme</label> 
-                <select name="select" id="theme_dropdown">
-                </select> 
+                <section id="current_theme_preview_container">
+                    <img id="current_theme_preview">
+                    <div>
+                        <h1 id="current_theme_displayname">CURRENT_THEME_NAME</h1>
+                        <h6 id="current_theme_author">CURRENT_THEME_AUTHOR</h6>
+                        <p id="current_theme_description">CURRENT_THEME_DESCRIPTION</p>
+                        <h5>Credits : </h5>
+                        <ul id="current_theme_credits">
+                        </ul>
+                    </div>
+                </section>
+                <h5>Select a theme to apply</h5>
+                <ol id="theme_list"></ol>
             </section>
         </nav-view-page>
 
