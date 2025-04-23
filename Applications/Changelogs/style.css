@@ -2,3 +2,7 @@ body {
     margin: 25px 14px 14px 14px;
     width: -webkit-fill-available !important;
 }
+
+li {
+    margin-left: 20px;
+}

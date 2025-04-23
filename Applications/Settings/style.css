@@ -1,0 +1,39 @@
+#current_theme_preview_container {
+    display: flex;
+    margin-bottom: 16px;
+    div {
+        margin: 8px;
+    }
+}
+#current_theme_display_name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#current_theme_preview {
+    width: 50%;
+}
+
+li {
+    margin-left: 20px;
+}
+
+.btn_theme_preview {
+    width: 30%;
+    height: fit-content !important;
+
+    margin: 4px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+#theme_list {
+    margin-top: 8px;
+}
+
+.selected {
+    border: 2px solid var(--color-primary) !important;
+}

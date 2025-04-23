@@ -1,0 +1,4 @@
+.selected {
+    outline: 4px solid #fbc761 !important;
+    padding: 0 !important;
+}
