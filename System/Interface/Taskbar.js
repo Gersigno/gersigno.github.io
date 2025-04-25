@@ -89,7 +89,13 @@ export default class Taskbar {
         const date = datetime.toLocaleDateString();
         const time = datetime.toLocaleTimeString();
         
-        this.#elements.time.innerText = time.replace(`:${datetime.getSeconds()}`, "");
+        const time_splited = time.split(":");
+        const time_clamped_12 = time_splited[0] > 12 ? time_splited[0] - 12 : time_splited[0];
+        const am_pm = time.split(" ")[1];
+
+        const time_fixed = time_clamped_12 + ":" + time_splited[1] + " " + am_pm;
+        
+        this.#elements.time.innerText = time_fixed;
         this.#elements.date.innerText = date;
 
         section.appendChild(this.#elements.time);
@@ -102,8 +108,14 @@ export default class Taskbar {
             const datetime = new Date();
             const date = datetime.toLocaleDateString();
             const time = datetime.toLocaleTimeString();
+
+            const time_splited = time.split(":");
+            const time_clamped_12 = time_splited[0] > 12 ? time_splited[0] - 12 : time_splited[0];
+            const am_pm = time.split(" ")[1];
+
+            const time_fixed = time_clamped_12 + ":" + time_splited[1] + " " + am_pm;
             
-            this.#elements.time.innerText = time.replace(`:${datetime.getSeconds()}`, "");
+            this.#elements.time.innerText = time_fixed;
             this.#elements.date.innerText = date;
 
             this.#updateDateTime();

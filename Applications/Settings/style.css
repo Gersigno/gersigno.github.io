@@ -1,5 +1,6 @@
 #current_theme_preview_container {
     display: flex;
+    align-items: center;
     margin-bottom: 16px;
     div {
         margin: 8px;
@@ -12,6 +13,7 @@
 
 #current_theme_preview {
     width: 50%;
+    height: fit-content;
 }
 
 li {

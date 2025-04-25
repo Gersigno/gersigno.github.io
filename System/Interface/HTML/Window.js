@@ -237,7 +237,7 @@ export default class Window extends HTMLElement {
         });
     }
 
-    #onFrameDOMContentLoaded () {
+    #onFrameDOMContentLoaded() {
         const window = document.getElementById(this.#UWID);
         const frame = document.getElementById(this.#UWID + "_frame");
         window.style.backgroundImage = "none";

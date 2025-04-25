@@ -32,7 +32,7 @@ nav-view {
         }
         nav-view-button {
             p {
-                display: inherit !important;
+                display: inherit;
             }
         }
         nav-view-button:is(.collapse-btn) {

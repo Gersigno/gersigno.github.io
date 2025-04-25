@@ -1,3 +1,5 @@
+import ZindexMap from "/System/Utils/ZindexMap.js";
+
 export default class ToastNotification extends HTMLElement {
     static observedAttributes = [
         "icon_src",
@@ -32,6 +34,7 @@ export default class ToastNotification extends HTMLElement {
         // this.classList.add("gwin_hover_border");
         this.classList.add("open");
         this.style["animation-duration"] = `${this.#fade_duration}ms`;
+        this.style["z-index"] = ZindexMap.map.toast;
 
         setTimeout(() => {
             if(this != null) {
