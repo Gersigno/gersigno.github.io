@@ -1,6 +1,4 @@
 import ZindexMap from '/System/Utils/ZindexMap.js';
-import ColorToStylesheet from '/System/Utils/ColorToStylesheet.js';
-import ColorSolver from '/System/Utils/ColorSolver.js';
 import System from '/System/Core/System.js';
 import Window from '/System/Interface/HTML/Window.js'
 
@@ -140,15 +138,9 @@ export default class Taskbar {
     }
 
     #applyColorShem() {
-        const color_filter  = new ColorToStylesheet();
-        const super_key     = document.getElementById("super");
-
-        const rgb = color_filter.hexToRgb(window.getComputedStyle(document.documentElement).getPropertyValue('--color-primary').toString());
-        const color = new ColorToStylesheet(rgb[0], rgb[1], rgb[2]);
-        const solver = new ColorSolver(color);
-        const result = solver.solve();
-        document.documentElement.style.setProperty("--var-taskbar-icon-hover-color", "\"" + result.filter + "\"");
-        super_key.style.cssText = `filter:${result.filter}`;
+        // const color_filter  = new ColorToStylesheet();
+        // const super_key     = document.getElementById("super");
+        // super_key.style.cssText = `filter:${result.filter}`;
     }
 
     #updateAppsList() {
