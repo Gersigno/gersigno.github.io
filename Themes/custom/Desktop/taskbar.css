@@ -75,6 +75,13 @@
     img {
         height: calc(100% / 1.4);
         aspect-ratio: 1/1;
+
+        transition: 200ms var(--cubic-bezier) transform;
+    }
+    &:is(.opened) {
+        img {
+            transform: scale(0.8) rotate(-180deg);
+        }
     }
 }
 #super:hover {

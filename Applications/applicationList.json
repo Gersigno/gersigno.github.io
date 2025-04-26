@@ -10,7 +10,8 @@
     "Uilib": {
         "display_name": "GwinUilib",
         "single_process_only": false,
-        "no_header": true
+        "no_header": true,
+        "dev_only": true
     },
     "Settings": {
         "display_name": "Settings",

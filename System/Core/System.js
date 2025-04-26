@@ -41,6 +41,8 @@ export default class System {
 
     };
 
+    #dev_mode = false; //Set to true to enable dev mode
+
     static events = {
         process_started:        "process_started",
         process_killed:         "process_killed",
@@ -64,7 +66,8 @@ export default class System {
         }
 
         setTimeout(() => {
-            system.services.toast.newToast("/resources/gwp_logo_icon.png", "Beta version", "This website is still in development !");
+            // system.services.toast.newToast("/resources/gwp_logo_icon.png", "Beta version", "This website is still in development !");
+            // Application.start("Welcome");
         }, 1000);
     }
 
@@ -158,5 +161,12 @@ export default class System {
      */
     get events() {
         return System.events;
+    }
+
+    get dev_mode() {
+        return this.#dev_mode;
+    }
+    set dev_mode(value) {
+        this.#dev_mode = value;
     }
 }
