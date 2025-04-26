@@ -11,7 +11,9 @@
     --color-lighter: #deecf9;
     --color-lighteralt: #eff6fc;
 
-    --taskbar-height: 42px;
+    --taskbar-height: 46px;
 
     --color-highlight-gradient: linear-gradient(to right, #00A5A7, #AD00FF, #FF8A00);
+    --color-highlight-gradient-outlines: linear-gradient(7deg,rgba(0, 165, 167, 1) 0%, rgba(173, 0, 255, 1) 50%, rgba(255, 138, 0, 1) 100%);
 }
+

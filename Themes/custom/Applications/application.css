@@ -1,7 +1,7 @@
 process-window {
     filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.5));
     border: 1px solid color-mix(in srgb, var(--color-light) 75%, transparent);
-    border-radius: 8px;
+    border-radius: 10px;
 
     background-color: color-mix(in srgb, var(--color-lighteralt) 75%, transparent);
 

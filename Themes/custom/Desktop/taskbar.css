@@ -1,11 +1,19 @@
 #taskbar {
     height: var(--taskbar-height);
-    background-color: color-mix(in srgb, var(--color-lighteralt) 50%, transparent);
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--color-lighteralt) 10%, transparent), color-mix(in srgb, var(--color-lighteralt) 35%, transparent) 60%);
     backdrop-filter: blur(15px);
-    width: calc(100% + 105.45px);
+    width: -webkit-fill-available;
+
+    margin: 8px;
+    padding-left: 105.45px;
+
+    border-radius: 10px;
+
+    -webkit-box-shadow: inset 0 0 2px white, 0 8px 10px rgba(0, 0, 0, 0.3);
+
     button {
         margin: 4px;
-        border-radius: 4px;
+        border-radius: 6px;
     }
     button:hover {
         background-color: color-mix(in srgb, var(--color-lighter) 15%, transparent) !important;
@@ -13,6 +21,42 @@
     }
 }
 
+#taskbar_borders {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 10px;
+
+    border: 1px solid transparent;
+    background: var(--color-highlight-gradient-outlines);
+    background-size: calc(100% + 2px) calc(100% + 2px);
+    background-position: -1px -1px;
+
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+#taskbar_actions {
+    /* margin-left: calc(auto (26.25px + 63.2px)); */
+    /* transform: translateX(-105.45px); */
+    #volume_btn {
+        margin: 4px;
+        aspect-ratio: 1 / 1.5;
+        padding: 0 4px 0 4px;
+    }
+    #current_time_date {
+        font-size: 0.9em;
+        margin-right: 8px;
+        #current_time {
+            font-weight: 500;
+        }
+    }
+}
 #super {
     background-color: transparent;
 
@@ -21,8 +65,11 @@
     margin: 4px 4px 4px auto !important;
     
     &:not(:hover) {
-        /* Reset filter on not hovered */
-        filter: invert() !important;
+        img {
+            /* Reset filter on not hovered */
+            filter: invert() !important;    
+        }
+        
     }
 
     img {
@@ -31,7 +78,10 @@
     }
 }
 #super:hover {
-    filter: var(--var-taskbar-icon-hover-color);
+    img {
+        filter: brightness(0) saturate(100%) var(--var-taskbar-icon-hover-color);
+    }
+    
     /* background-color: color-mix(in srgb, var(--color-lighter) 15%, transparent); */
 }
 
@@ -42,7 +92,6 @@
         aspect-ratio: 1/1;
 
         margin: 4px 2px 4px 2px;
-
         img {
             height: calc(100% / 1.1);
             aspect-ratio: 1/1;
@@ -61,16 +110,6 @@
     button:is(.focused)::after {
         left: 25%;
         right: 25%;
-        transition: 200ms;
     }
 }
 
-#taskbar_actions {
-    /* margin-left: calc(auto (26.25px + 63.2px)); */
-    transform: translateX(-105.45px);
-    #volume_btn {
-        margin: 4px;
-        aspect-ratio: 1 / 1.6;
-        padding: 0 4px 0 4px;
-    }
-}

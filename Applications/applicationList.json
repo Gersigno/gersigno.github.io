@@ -46,5 +46,10 @@
         "display_name": "Credits",
         "single_process_only": false,
         "no_header": true
+    },
+    "Welcome": {
+        "display_name": "Welcome",
+        "single_process_only": true,
+        "no_header": true
     }
 }
