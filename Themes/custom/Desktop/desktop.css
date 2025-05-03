@@ -1,12 +1,21 @@
 #desktop_icons_grid {
     padding-top: 8px;
-    padding-left: 3px;
+    padding-left: 8px;
     gap: 12px;
 }
 
 desktop-icon {
     width: 80px;
     height: 80px;
+
+    outline-color: transparent;
+    outline-width: 0px;
+    outline-style: solid;
+    border-radius: 8px;
+
+    transition: 200ms ease-in-out background-color, 200ms ease-in-out outline-color, 200ms ease-in-out outline-width, 200ms ease-in-out box-shadow;
+    box-shadow: 0 0 8px #00000000;
+
     img {
         filter: drop-shadow(0 2px 4px #00000030);
         width: 50%;
@@ -17,23 +26,25 @@ desktop-icon {
         color: var(--color-lighteralt);
         text-shadow: 0 3px 6px #00000070;
     }
-}
+}   
 
 desktop-icon:hover {
-    background-color: color-mix(in srgb, var(--color-light) 20%, transparent);
-    border-radius: 4px;
+    background-color: color-mix(in srgb, var(--color-light) 25%, transparent);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #00000010, inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent);
 }
 
 desktop-icon:focus-visible {
     background-color: color-mix(in srgb, var(--color-light) 35%, transparent);
-    outline-color: white;
+    outline-color: var(--color-light);
     outline-width: 1px;
-    outline-style: dotted;
-    border: 1px dotted white;
-    border-radius: 2px;
+    outline-style: solid;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px #00000010, inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent);
 }
 
 desktop-icon:focus, desktop-icon:focus-within {
     background-color: color-mix(in srgb, var(--color-light) 50%, transparent);
-    border-radius: 4px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #00000010, inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent);
 }

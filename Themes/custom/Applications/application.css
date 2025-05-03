@@ -3,9 +3,11 @@ process-window {
     border: 1px solid color-mix(in srgb, var(--color-light) 75%, transparent);
     border-radius: 10px;
 
-    background-color: color-mix(in srgb, var(--color-lighteralt) 75%, transparent);
+    background-color: color-mix(in srgb, var(--color-lighteralt) 60%, transparent);
 
     backdrop-filter: blur(15px);
+
+    transition: 200ms ease-in-out;
 
     header:first-child {
         h2 {
@@ -14,14 +16,20 @@ process-window {
         section:last-child {
             /* Action buttons section */
             button {
-                width: 45px;
+                width: 35px;
                 background-color: transparent;
+                border-radius: 0 0 6px 6px;
+                /* transition: 200ms ease-in-out background-color; */
             }
             button:hover {
-                background-color: var(--color-lighter);
+                background-color: color-mix(in srgb, var(--color-lighter) 45%, transparent);
             }
         }
     }
+}
+
+.moving_window {
+    transition: none !important;
 }
 
 process-window:is(.focused) {

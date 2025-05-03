@@ -1,10 +1,19 @@
 nav-view {
     main {
         margin-top: 40px;
-        border-radius: 8px 0 0 0;
+        border-radius: 10px 0 0 0;
+    }
+    menu {
+        transition: 200ms ease-in-out;
     }
     menu:is(.collapsed) {
         --menu-width: 46px;
+        & nav-view-button {
+            p {
+                opacity: 0;
+                display: inherit;
+            }
+        }
     }
     nav-view-button {
         background-color: transparent;
@@ -15,7 +24,11 @@ nav-view {
         /* height: 50px !important; */
 
         margin: 4px;
-        border-radius: 4px;
+        border-radius: 8px;
+
+        transition: 200ms ease-in-out;
+
+        position: relative;
         button-icon {
             background-size: 20px !important;
         }
@@ -23,6 +36,11 @@ nav-view {
             font-weight: 400;
             font-size: initial;
             padding-left: 8px;
+            position: absolute;
+            left: 28px;
+            opacity: 1;
+
+            transition: 200ms ease-in-out opacity;
         }
     }
     nav-view-button:not(:is(.collapse-btn)) {
@@ -30,12 +48,18 @@ nav-view {
         width: -webkit-fill-available !important;
     }
     nav-view-button::before {
-        height: calc(100% / 1.8) !important;
-        width: 3px !important;
+        content: "";
+        height: 0 !important;
+        width: 0px;
         border-radius: 10px;
+        transition: 200ms ease-in-out height;
+    }
+    nav-view-button:is(.current_page)::before {
+        height: calc(100% / 1.8) !important;
     }
     nav-view-button:hover {
-        background-color: var(--color-lighter);
+        background-color: color-mix(in srgb, var(--color-lighter) 35%, transparent) !important;
+        -webkit-box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent) !important;
     }
 }
 
