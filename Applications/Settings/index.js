@@ -1,7 +1,21 @@
 window.addEventListener("load", (event) => {
     init();
     updateThemePreview();
+
+    toggle_dev_mode.checked = window.top.system.dev_mode;
+
+    toggle_dev_mode.addEventListener('click', function (e) {
+        toggleDevMode();
+    });
 })
+
+const toggle_dev_mode = document.getElementById('devmode_toggle');
+
+function toggleDevMode() {
+    window.top.system.dev_mode = toggle_dev_mode.checked;
+    window.top.system.services.settings.update = ["devmode", toggle_dev_mode.checked];
+    window.top.system.services.toast.newToast(`/Themes/${window.top.system.services.settings.current.theme_name}/Icons/Applications/Devtool.png`, "Developer mode", `Dev mode ${toggle_dev_mode.checked ? "enabled ✅" : "disabled ❌"}`);
+}
 
 function init() {
     const theme_list            = window.top.system.services.theme.listOfThemes;

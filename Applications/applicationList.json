@@ -1,14 +1,15 @@
 {
     "Devtool": {
-        "display_name": "Developer tool",
-        "single_process_only": true
+        "display_name": "★ Developer tool",
+        "single_process_only": true,
+        "dev_only": true
     },
     "Hangman": {
         "display_name": "Hangman",
         "single_process_only": false
     },
     "Uilib": {
-        "display_name": "GwinUilib",
+        "display_name": "★ GwinUilib",
         "single_process_only": false,
         "no_header": true,
         "dev_only": true

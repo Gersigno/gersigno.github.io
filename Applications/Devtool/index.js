@@ -18,20 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.debug('Send message to top window : ', msg);
         }
     });
-
-    toggle_dev_mode.checked = window.top.system.dev_mode;
-
-    toggle_dev_mode.addEventListener('click', function (e) {
-        toggleDevMode();
-    });
-
 });
-
-const toggle_dev_mode = document.getElementById('devmode_toggle');
-
-function toggleDevMode() {
-    window.top.system.dev_mode = toggle_dev_mode.checked;
-}
 
 const nav_view = document.querySelector('nav-view');
 
@@ -43,14 +30,13 @@ window.top.onmessage = function(e) {
     const formattedTime = `[${hour}:${minutes}:${seconds}]`;
     const eventlogs = document.getElementById('window-message-textarea');
     const current_logs = eventlogs.innerHTML;
-    if(window.top.system.dev_mode) {
+    if(window.top.system.dev_mode &&  nav_view.current_page_id == 'events') {
         console.log('New window message : ', e);
     }
     eventlogs.innerHTML = current_logs + '\n' + formattedTime + e.data;
     eventlogs.scrollTop = eventlogs.scrollHeight;
 
     if(e.data === 'gwin_pageupdate') {
-        console.debug(window.top.system.dev_mode)
         if(!window.top.system.dev_mode && nav_view.current_page_id != 'home') {
             console.warn('not allowed');
             window.top.system.services.toast.newToast(`/Themes/${window.top.system.services.settings.current.theme_name}/Icons/warning.png`, "Error", "You are not allowed to access this resource !");

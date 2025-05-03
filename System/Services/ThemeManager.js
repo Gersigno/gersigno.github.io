@@ -57,7 +57,6 @@ export default class ThemeManager {
             const color = new ColorToStylesheet(rgb[0], rgb[1], rgb[2]);
             const solver = new ColorSolver(color);
             const result = solver.solve();
-            console.debug(result.loss);
             document.querySelector(':root').style.setProperty("--var-taskbar-icon-hover-color", `${result.filter.replace(";", "")}`);
                     
             document.dispatchEvent(System.events.theme_loaded);

@@ -1,8 +1,10 @@
 export default class Settings {
     #default_settings = {
-        theme_name:     "win_11",
+        theme_name:     "custom",
         theme_color:    "blue",
-        theme_dark:     false
+        theme_dark:     false,
+        welcome_read:   false,
+        devmode:        false
     };
 
     #current_settings;
@@ -19,15 +21,12 @@ export default class Settings {
     }
 
     set update([key, value]) {
-        if(!this.#current_settings[key]) {
-            console.error(`Settings: ${key} is not a valid key.`);
-            return;
-        } else {
-            this.#current_settings[key] = value;
-            this.#save();
-            system.services.theme.loadTheme(value);
+        this.#current_settings[key] = value;
+        this.#save();
+        if(key == "theme_name") {
+            // Load new theme
+            window.top.system.services.theme.loadTheme(this.#current_settings.theme_name);
         }
-        
     }
 
     get current() {
