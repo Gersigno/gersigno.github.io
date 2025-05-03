@@ -1,0 +1,55 @@
+#wallpaper {
+    background: #c8dce8;
+    background: radial-gradient(circle,rgba(200, 220, 232, 1) 30%, rgba(153, 204, 204, 1) 100%);
+
+    overflow: hidden;
+}
+
+.wallpaper_logo {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    width: 15vw;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    background-position: center;
+
+    background-color: var(--color-primary);
+  
+    -webkit-mask-image: url('/resources/gwp_logo_icon_white.png');
+    mask-image: url('/resources/gwp_logo_icon_white.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    /* filter: var(--var-taskbar-icon-hover-color); */
+}
+
+.wallpaper_gradiant {
+    position: absolute;
+    bottom: 0;
+    left: 25vw;
+    width: 25vw;
+    aspect-ratio: 1;
+    background-image: var(--color-highlight-gradient);
+    animation: rotate 15s ease-in-out alternate infinite;
+    border-radius: 30% 60% 60% 30%/30% 30% 60% 60%;
+    transform-origin: center;
+    translate: 50% 135%;
+    filter: blur(30px);
+    opacity: 0.5;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) scale(3) skew(0deg, 0deg);
+        opacity: 0.45;
+    }
+    100% {
+        transform: rotate(360deg) scale(3.2) skew(-5deg, 0deg);
+        opacity: 0.55;
+    }
+}

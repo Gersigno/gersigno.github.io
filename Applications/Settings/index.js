@@ -1,7 +1,21 @@
 window.addEventListener("load", (event) => {
     init();
     updateThemePreview();
+
+    toggle_dev_mode.checked = window.top.system.dev_mode;
+
+    toggle_dev_mode.addEventListener('click', function (e) {
+        toggleDevMode();
+    });
 })
+
+const toggle_dev_mode = document.getElementById('devmode_toggle');
+
+function toggleDevMode() {
+    window.top.system.dev_mode = toggle_dev_mode.checked;
+    window.top.system.services.settings.update = ["devmode", toggle_dev_mode.checked];
+    window.top.system.services.toast.newToast(`/Themes/${window.top.system.services.settings.current.theme_name}/Icons/Applications/Devtool.png`, "Developer mode", `Dev mode ${toggle_dev_mode.checked ? "enabled ✅" : "disabled ❌"}`);
+}
 
 function init() {
     const theme_list            = window.top.system.services.theme.listOfThemes;
@@ -12,19 +26,18 @@ function init() {
         const theme_element = document.createElement("button");
         const theme_preview = document.createElement("img");
         const theme_display_name = document.createElement("p");
-        // const background = theme_list[theme].background;
-        // option.value = theme;
-        // option.innerText = theme_list[theme].display_name;
-        // if(current_theme == theme) {
-        //     option.selected = true;
-        // }
-        // theme_element.innerHTML
+
         theme_preview.src = `/Themes/${theme}/preview.png`;
         theme_preview.alt = theme_list[theme].display_name;
         theme_display_name.innerText = theme_list[theme].display_name;
 
         theme_element.addEventListener("click", () => {
-            window.top.system.services.settings.update = ["theme_name", theme]
+            if(theme == "win_xp" && window.top.system.core.responsive.isPhone()) {
+                window.top.system.services.toast.newToast(`/Themes/${window.top.system.services.settings.current.theme_name}/Icons/warning.png`, "Error", "This theme is not available for this device!");
+                return;
+            } else {
+                window.top.system.services.settings.update = ["theme_name", theme];
+            }
         });
         theme_element.id = "theme_select_" + theme;
 

@@ -11,17 +11,40 @@
 <body>
     <nav-view>
         <!-- Buttons -->
-        <nav-view-button page_id="events">
+        <nav-view-button page_id="home">
+            <button-icon icon="home" size="small"></button-icon>
+            <p>Home</p>
+        </nav-view-button>
+        <nav-view-button page_id="terminal" onclick="pageChanged()">
+            <button-icon icon="terminal" size="small"></button-icon>
+            <p>Console hijack</p>
+        </nav-view-button>
+        <nav-view-button page_id="events" onclick="pageChanged()">
             <button-icon icon="antena" size="small"></button-icon>
             <p>Events</p>
         </nav-view-button>
-
-        <nav-view-button page_id="customize">
+        <nav-view-button page_id="customize" onclick="pageChanged()">
             <button-icon icon="customize" size="small"></button-icon>
             <p>Customization</p>
         </nav-view-button>
 
         <!-- Pages -->
+        <nav-view-page page_id="home">
+            <section class="gwin_section">
+                <p>Dev tool</p>
+            </section>
+        </nav-view-page>
+
+        <nav-view-page page_id="terminal">
+            <section class="gwin_section">
+                <p>Check your <b>browser's devtool <i>(or F12)</i></b>, then <b>console tab.</b></p>
+                <button class="button" onclick="console.log('hello world!')">Send console.log</button>
+                <button class="button" onclick="console.debug('hello world!')">Send console.debug</button>
+                <button class="button" onclick="console.warn('hello world!')">Send console.warn</button>
+                <button class="button" onclick="console.error('hello world!')">Send console.error</button>
+            </section>
+        </nav-view-page>
+
         <nav-view-page page_id="events">
             <h4>System events</h4>
             <div class="horizontal">

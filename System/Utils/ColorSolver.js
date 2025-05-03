@@ -1,5 +1,3 @@
-//Credits: sosuke (Barrett Sonntag)
-
 import ColorToStylesheet from "/System/Utils/ColorToStylesheet.js";
 
 export default class ColorSolver {

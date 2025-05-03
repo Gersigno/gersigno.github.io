@@ -16,7 +16,7 @@ import Application          from '/System/Services/Application.js';
 export default class System {    
 
     #infos = {
-        version:    'Beta-2.1.0'
+        version:    'Beta-2.1.1'
     };
 
     #core = {
@@ -41,6 +41,8 @@ export default class System {
 
     };
 
+    #dev_mode = false; //Set to true to enable dev mode
+
     static events = {
         process_started:        "process_started",
         process_killed:         "process_killed",
@@ -59,13 +61,18 @@ export default class System {
         this.#initComponents(); //Initialize our system's components
         this.#initEvents(); //Initialize our system's events
 
+        this.#dev_mode = window.top.system.services.settings.current.devmode; //Set the dev mode to the current value saved in settings
+
         if(!system.core.responsive.isDesktop()) {
             alert("For a better experience, visit this website from a computer !");
         }
 
         setTimeout(() => {
-            system.services.toast.newToast("/resources/gwp_logo_icon.png", "Beta version", "This website is still in development !");
-        }, 1000);
+            // system.services.toast.newToast("/resources/gwp_logo_icon.png", "Beta version", "This website is still in development !");
+            if(window.top.system.services.settings.current.welcome_read == false) {
+                Application.start("Welcome");
+            }
+        }, 500);
     }
 
     #createCustomElements() {
@@ -158,5 +165,20 @@ export default class System {
      */
     get events() {
         return System.events;
+    }
+
+    get application() {
+        return Application;
+    }
+
+    get window() {
+        return Window;
+    }
+
+    get dev_mode() {
+        return this.#dev_mode;
+    }
+    set dev_mode(value) {
+        this.#dev_mode = value;
     }
 }

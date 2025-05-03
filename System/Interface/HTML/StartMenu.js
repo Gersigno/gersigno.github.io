@@ -7,6 +7,9 @@ export default class StartMenu extends HTMLElement {
         super();
     }
 
+    static onOpened() {}
+    static onClosed() {}
+
     #elements = {
         left_menu: document.createElement("menu"),
         right_menu: document.createElement("menu")
@@ -22,9 +25,9 @@ export default class StartMenu extends HTMLElement {
 
         this.#buildLeftMenu();
         this.#buildApplicationsList();
+        StartMenu.onOpened();
 
         document.addEventListener("mousedown", this.#handleClick);
-
     }
 
     #handleClick = (event) => {
@@ -138,5 +141,10 @@ export default class StartMenu extends HTMLElement {
 
     connectedCallback() {
         this.#init();
+    }
+
+    disconnectedCallback() {
+        StartMenu.onClosed();
+        document.removeEventListener("mousedown", this.#handleClick);
     }
 }

@@ -3,8 +3,16 @@ import ColorToStylesheet from '/System/Utils/ColorToStylesheet.js';
 export default class Debug {
     static debug_print = true;
     static icons = {
-        main: "\u{E0B2}",
-        clock: "\u{23F1}",
+        opening: "\u{E0B2}",
+        separator: "\u{E0BC}",
+        closing: "\u{E0B0}",
+        main: "\u{e781}",
+        clock: "\u{f43a}",
+        trace: "\u{f0214}",
+        log: "\u{f0366}",
+        debug: "\u{f188}",
+        warn: "\u{f071}",
+        error: "\u{ea87}",
     };
 
     //Save original console.log/warn/error
@@ -45,6 +53,7 @@ export default class Debug {
     };
 
     static log(funcPtr,...args) {
+        funcPtr == Debug.types.debug ? funcPtr = Debug.types.log : funcPtr = funcPtr;
         const datetime          = new Date();
         const time_hours        = datetime.getHours() <= 9 ? `0${datetime.getHours()}` : datetime.getHours();
         const time_minutes      = datetime.getMinutes() <= 9 ? `0${datetime.getMinutes()}` : datetime.getMinutes();
@@ -56,13 +65,13 @@ export default class Debug {
 
         const header_line_start     = `\x1b[00m\u256D\u2500\x1b[01m`;
         const content_line_start    = `\x1b[00m\u2570\u2500\x1b[02m`;
-        const icon_text             = `\x1b[37m${Debug.icons.main}\x1b[30m\x1b[47m \u{2692}`;
-        const header_log            = `\x1b[37m\x1b[44m\u{E0BC}\x1b[37m   Log   \x1b[34m`;
-        const header_debug          = `\x1b[37m\x1b[48m\u{E0BC}\x1b[37m  Debug  \x1b[38m`;
-        const header_warn           = `\x1b[37m\x1b[43m\u{E0BC}\x1b[30m Warning \x1b[33m`;
-        const header_error          = `\x1b[37m\x1b[41m\u{E0BC}\x1b[30m  Error  \x1b[31m`;
-        const header_time           = `\x1b[42m\u{E0BC}\x1b[37m ${Debug.icons.clock} ${time_hours}:${time_minutes}:${time_seconds}:${time_milliseconds} \x1b[32m\x1b[42m`;
-        const header_instigator     = `\x1b[45m\u{E0BC} \x1b[20m${origin_link}\x1b[13m \x1b[12m\x1b[35m\u{E0B0}`;
+        const icon_text             = `\x1b[37m${Debug.icons.opening}\x1b[30m\x1b[47m ${Debug.icons.main}`;
+        const header_log            = `\x1b[37m\x1b[44m${Debug.icons.separator}\x1b[37m   ${Debug.icons.log} Log   \x1b[34m`;
+        const header_debug          = `\x1b[37m\x1b[48m${Debug.icons.separator}\x1b[37m  ${Debug.icons.debug} Debug  \x1b[38m`;
+        const header_warn           = `\x1b[37m\x1b[43m${Debug.icons.separator}\x1b[30m ${Debug.icons.warn} Warning \x1b[33m`;
+        const header_error          = `\x1b[37m\x1b[41m${Debug.icons.separator}\x1b[30m  ${Debug.icons.error} Error  \x1b[31m`;
+        const header_time           = `\x1b[42m${Debug.icons.separator}\x1b[37m ${Debug.icons.clock} ${time_hours}:${time_minutes}:${time_seconds}:${time_milliseconds} \x1b[32m\x1b[42m`;
+        const header_instigator     = `\x1b[45m${Debug.icons.separator} \x1b[20m${Debug.icons.trace} ${origin_link}\x1b[13m \x1b[12m\x1b[35m${Debug.icons.closing}`;
 
         let log_type_text;
 
@@ -86,9 +95,6 @@ export default class Debug {
         if((Debug.debug_print && arguments[0] == Debug.types.debug) || arguments[0] != Debug.types.debug) {
             const header_content = `${header_line_start}${icon_text} ${log_type_text}${header_time}${header_instigator}\n\x1b[00m\x1b[10m${content_line_start}`;
             const { formatted_text, css_styles } = ColorToStylesheet.ansiToCss(header_content);
-            // Debug.types.log(formatted_text);
-            // Debug.types.log(css_styles);
-            // Debug.types.log(...args);
             const log_args = [formatted_text];
 
             css_styles.forEach(style => {
@@ -100,17 +106,18 @@ export default class Debug {
             }
 
             console.groupCollapsed(formatted_text, ...css_styles, ...args);
-            Debug.types.log("Origin " + stack);
-            console.groupCollapsed("View full log");
+            Debug.types.log("🔍 Origin Trace " + stack);
+            console.groupCollapsed("💭 Base log")
                 funcPtr(...args);
             console.groupEnd()
-            console.groupCollapsed("Trace");
-                    
-                    funcPtr(console.trace("Trace"));
-                console.groupEnd()
-                console.groupCollapsed("Context");
-                    funcPtr(console.context())
-                console.groupEnd()
+            console.groupCollapsed("🗃️ Trace")
+                funcPtr(console.trace("Trace"))
+            console.groupEnd()
+            console.groupCollapsed("🪪 Type(s)")
+            for (const arg of args) {
+                funcPtr(`[`,typeof arg,`]`, `(${arg})`);
+            }
+            console.groupEnd()
             console.groupEnd()
             return undefined;
         }

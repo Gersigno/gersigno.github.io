@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
             console.debug('Send message to top window : ', msg);
         }
     });
-
 });
+
+const nav_view = document.querySelector('nav-view');
 
 window.top.onmessage = function(e) {
     const time = new Date();
@@ -29,8 +30,17 @@ window.top.onmessage = function(e) {
     const formattedTime = `[${hour}:${minutes}:${seconds}]`;
     const eventlogs = document.getElementById('window-message-textarea');
     const current_logs = eventlogs.innerHTML;
-    console.debug('New window message : ', e);
+    if(window.top.system.dev_mode &&  nav_view.current_page_id == 'events') {
+        console.log('New window message : ', e);
+    }
     eventlogs.innerHTML = current_logs + '\n' + formattedTime + e.data;
     eventlogs.scrollTop = eventlogs.scrollHeight;
-}
 
+    if(e.data === 'gwin_pageupdate') {
+        if(!window.top.system.dev_mode && nav_view.current_page_id != 'home') {
+            console.warn('not allowed');
+            window.top.system.services.toast.newToast(`/Themes/${window.top.system.services.settings.current.theme_name}/Icons/warning.png`, "Error", "You are not allowed to access this resource !");
+            nav_view.switchPage('home');
+        }
+    }
+}
