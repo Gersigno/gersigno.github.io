@@ -1,6 +1,4 @@
 import ZindexMap from '/System/Utils/ZindexMap.js';
-import ColorToStylesheet from '/System/Utils/ColorToStylesheet.js';
-import ColorSolver from '/System/Utils/ColorSolver.js';
 import System from '/System/Core/System.js';
 import Window from '/System/Interface/HTML/Window.js'
 
@@ -89,7 +87,13 @@ export default class Taskbar {
         const date = datetime.toLocaleDateString();
         const time = datetime.toLocaleTimeString();
         
-        this.#elements.time.innerText = time.replace(`:${datetime.getSeconds()}`, "");
+        const time_splited = time.split(":");
+        const time_clamped_12 = time_splited[0] > 12 ? time_splited[0] - 12 : time_splited[0];
+        const am_pm = time.split(" ")[1];
+
+        const time_fixed = time_clamped_12 + ":" + time_splited[1] + " " + am_pm;
+        
+        this.#elements.time.innerText = time_fixed;
         this.#elements.date.innerText = date;
 
         section.appendChild(this.#elements.time);
@@ -102,8 +106,14 @@ export default class Taskbar {
             const datetime = new Date();
             const date = datetime.toLocaleDateString();
             const time = datetime.toLocaleTimeString();
+
+            const time_splited = time.split(":");
+            const time_clamped_12 = time_splited[0] > 12 ? time_splited[0] - 12 : time_splited[0];
+            const am_pm = time.split(" ")[1];
+
+            const time_fixed = time_clamped_12 + ":" + time_splited[1] + " " + am_pm;
             
-            this.#elements.time.innerText = time.replace(`:${datetime.getSeconds()}`, "");
+            this.#elements.time.innerText = time_fixed;
             this.#elements.date.innerText = date;
 
             this.#updateDateTime();
@@ -128,15 +138,9 @@ export default class Taskbar {
     }
 
     #applyColorShem() {
-        const color_filter  = new ColorToStylesheet();
-        const super_key     = document.getElementById("super");
-
-        const rgb = color_filter.hexToRgb(window.getComputedStyle(document.documentElement).getPropertyValue('--color-primary').toString());
-        const color = new ColorToStylesheet(rgb[0], rgb[1], rgb[2]);
-        const solver = new ColorSolver(color);
-        const result = solver.solve();
-        document.documentElement.style.setProperty("--var-taskbar-icon-hover-color", "\"" + result.filter + "\"");
-        super_key.style.cssText = `filter:${result.filter}`;
+        // const color_filter  = new ColorToStylesheet();
+        // const super_key     = document.getElementById("super");
+        // super_key.style.cssText = `filter:${result.filter}`;
     }
 
     #updateAppsList() {

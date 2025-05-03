@@ -7,6 +7,10 @@ export default class Application {
         const list = await Application.getAll();
         Object.keys(list).forEach(element => {
             if(element == app_uaid) {
+                if(list[element].dev_only == true && !window.top.system.dev_mode) {
+                    window.top.system.services.toast.newToast(`/Themes/${window.top.system.services.settings.current.theme_name}/Icons/warning.png`, "Error", "You are not allowed to access this resource !");
+                    return;
+                }
                 if(list[element].single_process_only != undefined && list[element].single_process_only) {
                     // Check for application instances for target application with single instance only property set tto true
                     Window.instances.forEach(instance => {
@@ -42,6 +46,12 @@ export default class Application {
         }).catch(e => {
             console.warn(e); 
             return;
+        });
+        
+        Object.keys(list).forEach(element => {
+            if(list[element].dev_only == true && !window.top.system.dev_mode) {
+                delete list[element];
+            }
         });
         return list;
     }

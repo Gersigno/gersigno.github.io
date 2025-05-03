@@ -19,5 +19,12 @@
         "description": "A theme that mimics the modern Windows 11 look.",
         "credits": ["Microsoft"],
         "debug_only": false
+    },
+    "custom": {
+        "display_name": "Gersigno's theme",
+        "author": "Gersigno",
+        "description": "A statisfying modern theme, kind of Windows 12 concept.",
+        "credits": [],
+        "debug_only": false
     }
 }

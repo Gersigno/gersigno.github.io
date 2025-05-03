@@ -1,0 +1,21 @@
+:root {
+    --default-font: "Segoe UI", Arial, sans-serif;
+
+    --color-darker: #004578;
+    --color-dark: #005a9e;
+    --color-darkalt: #106ebe;
+    --color-primary: #0078da;
+    --color-secondary: #2b88d8;
+    --color-tertiary: #71afe5;
+    --color-light: #c7e0f4;
+    --color-lighter: #deecf9;
+    --color-lighteralt: #eff6fc;
+
+    --taskbar-height: 46px;
+
+    --color-highlight-gradient: linear-gradient(to right, #00A5A7, #AD00FF, #FF8A00);
+    --color-highlight-gradient-outlines: linear-gradient(7deg,rgba(0, 165, 167, 1) 0%, rgba(173, 0, 255, 1) 50%, rgba(255, 138, 0, 1) 100%);
+
+    --cubic-bezier: cubic-bezier(.62,0,.76,1.55);
+}
+

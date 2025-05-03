@@ -1,5 +1,3 @@
-import System from "/System/Core/System.js";
-
 export default class NavView extends HTMLElement {
     static observedAttributes = ["page_id"];
 
@@ -28,8 +26,6 @@ export default class NavView extends HTMLElement {
 
         window.customElements.define("nav-view-button", this.#button);
         window.customElements.define("nav-view-page", this.#page);
-
-        
     }
      
     #build() {

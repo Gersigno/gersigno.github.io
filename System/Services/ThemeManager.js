@@ -1,5 +1,7 @@
 import System from '/System/Core/System.js';
 import ThemeBase from '/System/Modules/ThemeBase.js';
+import ColorToStylesheet from '/System/Utils/ColorToStylesheet.js';
+import ColorSolver from '/System/Utils/ColorSolver.js';
 
 export default class ThemeManager {
     #path_list_file = "/Themes/List.json";
@@ -49,6 +51,14 @@ export default class ThemeManager {
                 console.error(e);
             });
             this.#updateIcons();
+            
+            const color_filter  = new ColorToStylesheet();
+            const rgb = color_filter.hexToRgb(window.getComputedStyle(document.documentElement).getPropertyValue('--color-primary').toString());
+            const color = new ColorToStylesheet(rgb[0], rgb[1], rgb[2]);
+            const solver = new ColorSolver(color);
+            const result = solver.solve();
+            document.querySelector(':root').style.setProperty("--var-taskbar-icon-hover-color", `${result.filter.replace(";", "")}`);
+                    
             document.dispatchEvent(System.events.theme_loaded);
             window.postMessage("theme_update", "*");
         }

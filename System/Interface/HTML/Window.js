@@ -63,10 +63,11 @@ export default class Window extends HTMLElement {
 
         this.innerHTML = window_content;
         this.id = this.#UWID;
-        this.style.width       = size.w + "px";
-        this.style.height      = size.h + "px";
-        this.style.left        = position.x + ((Window.instances.length - 1) * this.#NEW_WINDOW_GAP) + "px";
-        this.style.top         = position.y + ((Window.instances.length - 1) * this.#NEW_WINDOW_GAP) + "px";
+        this.style.width        = size.w + "px";
+        this.style.height       = size.h + "px";
+        this.style.left         = position.x + ((Window.instances.length - 1) * this.#NEW_WINDOW_GAP) + "px";
+        this.style.top          = position.y + ((Window.instances.length - 1) * this.#NEW_WINDOW_GAP) + "px";
+        this.style.opacity      = "1";
 
         if(!system.core.responsive.isDesktop()) {
             this.classList.add("maximized");
@@ -175,6 +176,7 @@ export default class Window extends HTMLElement {
      */
     #moveBegin() {
         if(!this.classList.contains("maximized")) {
+            this.classList.add("moving_window");
             const frame = document.getElementById(this.#UWID + "_frame");
 
             this.#move_base_mouse_pos = {
@@ -196,6 +198,7 @@ export default class Window extends HTMLElement {
      * Stop our moving window animation
      */
     #moveStop() {
+        this.classList.remove("moving_window");
         const frame = document.getElementById(this.#UWID + "_frame");
 
         this.#is_moving = false;
@@ -237,7 +240,7 @@ export default class Window extends HTMLElement {
         });
     }
 
-    #onFrameDOMContentLoaded () {
+    #onFrameDOMContentLoaded() {
         const window = document.getElementById(this.#UWID);
         const frame = document.getElementById(this.#UWID + "_frame");
         window.style.backgroundImage = "none";

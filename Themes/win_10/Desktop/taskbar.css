@@ -20,7 +20,7 @@
     }
 }
 #super:hover {
-    filter: var(--var-taskbar-icon-hover-color);
+    filter: brightness(0) saturate(100%) var(--var-taskbar-icon-hover-color);
     background-color: color-mix(in srgb, var(--color-lighter) 15%, transparent);
 }
 
