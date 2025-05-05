@@ -119,7 +119,7 @@ export default class Debug {
             }
             console.groupEnd()
             console.groupEnd()
-            return undefined;
+            return;
         }
     }
 }

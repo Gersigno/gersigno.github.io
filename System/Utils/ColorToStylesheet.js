@@ -13,8 +13,9 @@ export default class ColorToStylesheet {
     static ansiToCss(text) {
         const ansi_regex = /\x1b\[(\d+;?)*m/g;
         const styles = [];
+        const font = "font-family: 'Cascadia Code NF'; font-weight: normal; padding: 0; margin: 0; font-size: 1.1em;";
         const styles_map = {
-            "00": "font-family: 'MesloLGS NF'; font-weight: normal; padding: 0; margin: 0; font-size: 1.1em;",
+            "00": "font-weight: normal; padding: 0; margin: 0; font-size: 1.1em;",
             "01": "font-weight: 800;",
             "02": "font-weight: 800; font-size: 1.1em;",
             "10": "color: inherit; background-color: inherit; text-decoration: none;",
@@ -40,7 +41,6 @@ export default class ColorToStylesheet {
             "46": "background-color: cyan;",
             "47": "background-color: white;",
             "48": "background-color: green;",
-
         };
 
         let css_styles = [];
@@ -58,7 +58,7 @@ export default class ColorToStylesheet {
                 //Apply ANSI code to styles
                 codes.split(";").forEach(code => {
                     if (styles_map[code]) {
-                        styles.push(styles_map[code]);
+                        styles.push(font + styles_map[code]);
                     }
                 });
             }
