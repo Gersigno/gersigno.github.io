@@ -38,3 +38,11 @@
     width: -webkit-fill-available;
     height: -webkit-fill-available;
 }
+
+.preview_img {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    border: 1px solid color-mix(in srgb, grey 20%, white);
+    border-radius: 8px;
+    -webkit-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+}
