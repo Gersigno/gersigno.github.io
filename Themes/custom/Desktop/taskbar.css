@@ -1,7 +1,8 @@
 #taskbar {
     height: var(--taskbar-height);
     background: linear-gradient(to bottom, color-mix(in srgb, var(--color-lighteralt) 10%, transparent), color-mix(in srgb, var(--color-lighteralt) 35%, transparent) 60%);
-    backdrop-filter: blur(15px);
+    backdrop-filter: var(--filter-distortion);
+    -webkit-backdrop-filter: var(--filter-distortion);
     width: -webkit-fill-available;
 
     margin: 8px;

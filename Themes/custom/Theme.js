@@ -1,7 +1,7 @@
 import ThemeBase from '/System/Modules/ThemeBase.js';
 import ThemeWallpaper from './Wallpaper/Wallpaper.js';
 import StartMenu from '/System/Interface/HTML/StartMenu.js';
-import Highlight from './effects.js';
+import Window from '/System/Interface/HTML/Window.js';
 
 export default class Theme extends ThemeBase {
     _index() {
@@ -15,13 +15,18 @@ export default class Theme extends ThemeBase {
         taskbar.appendChild(taskbar_borders);
 
         this._hookStartMenu();
+        // this._injectDisplacement();
     }
 
     _destruct() {
         const taskbar_borders = document.querySelector('#taskbar_borders');
+        const displacement_effect = document.querySelector('#displacement_effect');
 
         if (taskbar_borders) {
             taskbar_borders.remove();
+        }
+        if (displacement_effect) {
+            displacement_effect.remove();
         }
     }
 
@@ -44,4 +49,17 @@ export default class Theme extends ThemeBase {
             super_button.classList.remove('opened');
         };
     }
+
+    // _injectDisplacement() {
+    //     console.debug('Injecting displacement SVG filter');
+    //     const svg = document.createElement('svg');
+    //     svg.style.display = 'none';
+    //     svg.id = 'displacement_effect';
+    //     svg.innerHTML = `
+    //     <filter id="filter" color-interpolation-filters="linearRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+    //         <feFlood flood-color="#ff0000" flood-opacity="1" x="0%" y="0%" width="100%" height="100%" result="flood"/>
+    //     </filter>
+    //     `;
+    //     document.body.appendChild(svg);
+    // }
 }

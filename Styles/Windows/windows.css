@@ -16,13 +16,6 @@ process-window {
 
     pointer-events: all;
 
-    &:is(.maximized) {
-        left: 0 !important;
-        top: 0 !important;
-        width: 100% !important;
-        height: calc(100% - var(--taskbar-height)) !important;
-    }
-
     header:first-child {
         display: flex;
         justify-content: space-between;
@@ -77,4 +70,11 @@ process-window {
         width: 100%;
         height: 100%;
     }
+}
+
+.maximized {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: calc(100% - var(--taskbar-height)) !important;
 }

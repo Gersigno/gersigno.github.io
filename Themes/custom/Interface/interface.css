@@ -70,7 +70,7 @@ main {
 
 toast-notification {
     background-color: color-mix(in srgb, var(--color-lighteralt) 50%, transparent);
-    backdrop-filter: blur(15px);
+    backdrop-filter: var(--background-blur);
     min-width: 200px;
 
     padding: 4px;

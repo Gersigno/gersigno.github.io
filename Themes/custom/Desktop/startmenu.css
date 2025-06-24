@@ -1,6 +1,7 @@
 start-menu {
     background: linear-gradient(to bottom, color-mix(in srgb, var(--color-lighteralt) 40%, transparent), color-mix(in srgb, var(--color-lighteralt) 50%, transparent) 10%);
-    backdrop-filter: blur(15px);
+    backdrop-filter: var(--filter-distortion);
+    -webkit-backdrop-filter: var(--filter-distortion);
 
     margin-bottom: 12px;
     border-radius: 8px;
@@ -11,7 +12,7 @@ start-menu {
     left: 50vw !important;
     transform: translateX(-50%);
 
-    animation: start-menu ease-out 200ms forwards;
+    animation: start-menu cubic-bezier(0.18, 0.89, 0.32, 1.28) 300ms forwards;
 
     width: 30vw !important;
 
