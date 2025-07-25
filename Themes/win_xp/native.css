@@ -15,7 +15,8 @@
 * {
     image-rendering: pixelated;
     -webkit-font-smoothing:none !important;
-    -moz-osx-font-smoothing: none !important;
+    -moz-font-smoothing: none !important;
+    font-smoothing: none !important;
 }
 
 h1,
