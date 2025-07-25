@@ -50,7 +50,9 @@ body::after {
     left: 8vw;
     right: 8vw;
     height: var(--footer-size);
-    width: -webkit-fill-available;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
     display: flex;
     align-items: center;
     z-index: 1;
@@ -61,6 +63,9 @@ body::after {
 }
 
 ::-webkit-scrollbar {
+    width: 0;
+}
+::-moz-scrollbar {
     width: 0;
 }
 h1 {

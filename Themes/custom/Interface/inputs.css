@@ -15,6 +15,8 @@ select {
     background-color: white;
     border-radius: 6px;
     -webkit-box-shadow: inset 0 0 2px white, inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    -moz-box-shadow: inset 0 0 2px white, inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    box-shadow: inset 0 0 2px white, inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
 
     transition: 300ms ease-in-out;
 
@@ -24,6 +26,8 @@ select {
 
     &:focus-within, &:focus {
         -webkit-box-shadow: inset 0 0 2px white, inset 0 -2px 0 var(--color-primary);
+        -moz-box-shadow: inset 0 0 2px white, inset 0 -2px 0 var(--color-primary);
+        box-shadow: inset 0 0 2px white, inset 0 -2px 0 var(--color-primary);
     }
 }
 
@@ -37,6 +41,8 @@ input[type="reset"] {
     background-color: white;
     border-radius: 6px;
     -webkit-box-shadow: inset 0 0 2px white, inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    -moz-box-shadow: inset 0 0 2px white, inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    box-shadow: inset 0 0 2px white, inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
 
     transition: 300ms ease-in-out;
 
@@ -46,11 +52,15 @@ input[type="reset"] {
 
     &:focus-within, &:focus {
         -webkit-box-shadow: inset 0 0 2px white, inset 0 -2px 0 var(--color-primary);
+        -moz-box-shadow: inset 0 0 2px white, inset 0 -2px 0 var(--color-primary);
+        box-shadow: inset 0 0 2px white, inset 0 -2px 0 var(--color-primary);
     }
 }
 
 input[type="range"] {
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     width: 100%;
     height: 4px;
     background: color-mix(in srgb, grey 80%, white);
@@ -59,8 +69,9 @@ input[type="range"] {
     transition: background 0.3s;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb, input[type="range"]::-moz-slider-thumb {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 16px;
     height: 16px;
@@ -98,7 +109,7 @@ input[type="range"]:hover {
     background: color-mix(in srgb, grey 70%, white);
 }
 
-input[type="range"]::-webkit-slider-thumb:hover {
+input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-moz-slider-thumb:hover {
     border: 2px solid white;
 }
 
@@ -110,12 +121,13 @@ input[type="range"]::-ms-thumb:hover {
 input[type="range"]:focus {
     outline: none;
 }
-input[type="range"]:focus::-webkit-slider-thumb {
+input[type="range"]:focus::-webkit-slider-thumb, input[type="range"]:focus::-moz-slider-thumb {
     box-shadow: 0 0 6px rgba(0, 120, 212, 0.7);
 }
 
 input[type="radio"] {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 16px;
     height: 16px;
@@ -158,6 +170,7 @@ input[type="radio"]:focus {
 
 input[type="checkbox"]:not(:is(.gwin_switch)) {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 16px;
     height: 16px;
@@ -201,6 +214,7 @@ input[type="checkbox"]:not(:is(.gwin_switch)):focus {
 
 input[type="color"] {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 36px;
     height: 36px;
@@ -213,12 +227,12 @@ input[type="color"] {
     overflow: hidden;
 }
 
-input[type="color"]::-webkit-color-swatch {
+input[type="color"]::-webkit-color-swatch, input[type="color"]::-moz-color-swatch {
     border: none;
     border-radius: 6px;
 }
 
-input[type="color"]::-webkit-color-swatch-wrapper {
+input[type="color"]::-webkit-color-swatch-wrapper, input[type="color"]::-moz-color-swatch-wrapper {
     padding: 0;
     border-radius: 6px;
 }
@@ -240,6 +254,7 @@ a {
 
 .gwin_switch {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 40px;
     height: 20px;

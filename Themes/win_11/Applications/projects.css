@@ -11,6 +11,8 @@
         transition: 300ms ease-in-out;
         color: var(--color-lighteralt);
         -webkit-box-shadow: inset 0 -2px 0 var(--color-primary) !important;
+        -moz-box-shadow: inset 0 -2px 0 var(--color-primary) !important;
+        box-shadow: inset 0 -2px 0 var(--color-primary) !important;
         position: absolute;
         opacity: 0;
     }
@@ -18,6 +20,8 @@
         background-color: #00000079 !important;
         backdrop-filter: blur(20px);
         -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
     }
     &:hover {
         transform: translateY(-2px);
@@ -40,6 +44,7 @@
     transition: transform 0.5s ease-in-out;
     border-radius: 8px;
     -webkit-mask-image: linear-gradient(to top,black 10%,transparent 100%);
+    -moz-mask-image: linear-gradient(to top,black 10%,transparent 100%);
     mask-image: linear-gradient(to top,black 10%,transparent 100%);
     z-index: 0;
     border-radius: 8px;

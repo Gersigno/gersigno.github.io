@@ -8,6 +8,8 @@
     border: 1px solid color-mix(in srgb, grey 20%, white);
     border-radius: 8px;
     -webkit-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    -moz-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
 
     z-index: 1;
 
@@ -30,6 +32,7 @@
     opacity: 0;
     border-radius: 8px;
     -webkit-mask-image: linear-gradient(to right,black 10%,transparent 100%);
+    -moz-mask-image: linear-gradient(to right,black 10%,transparent 100%);
     mask-image: linear-gradient(to right,black 10%,transparent 100%);
 }
 
@@ -60,6 +63,7 @@
         opacity: 0;
         border-radius: 8px;
         -webkit-mask-image: linear-gradient(to right,black 15%,transparent 100%);
+        -moz-mask-image: linear-gradient(to right,black 15%,transparent 100%);
         mask-image: linear-gradient(to right,black 15%,transparent 100%);
     }
     &:is(.gwin_carousel_slide_current) {
@@ -91,6 +95,8 @@
 
         width: 50%;
         height: -webkit-fill-available;
+        height: -moz-available;          /* WebKit-based browsers will ignore this. */
+        height: fill-available;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -114,11 +120,15 @@
             transition: 300ms ease-in-out;
             color: var(--color-lighteralt);
             -webkit-box-shadow: inset 0 -2px 0 var(--color-primary) !important;
+            -moz-box-shadow: inset 0 -2px 0 var(--color-primary) !important;
+            box-shadow: inset 0 -2px 0 var(--color-primary) !important;
         }
         button:hover {
             background-color: #00000079;
             backdrop-filter: blur(20px);
             -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
         }
     }
 }

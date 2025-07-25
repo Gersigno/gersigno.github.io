@@ -41,6 +41,8 @@ nav-view {
 
 main {
     width: -webkit-fill-available;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: fill-available;
     background-color: var(--color-lighteralt);
 }
 
@@ -99,6 +101,8 @@ toast-notification {
     background-color: var(--color-lighteralt);
     border-radius: 6px;
     -webkit-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    -moz-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
     legend {
         display: none;
     }
@@ -109,11 +113,15 @@ toast-notification {
     background-color: var(--color-lighteralt);
     border-radius: 6px;
     -webkit-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    -moz-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
 }
 
 video {
     border: 1px solid color-mix(in srgb, grey 20%, white);
     border-radius: 8px;
     -webkit-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    -moz-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
 }
 

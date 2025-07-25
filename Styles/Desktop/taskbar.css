@@ -26,13 +26,19 @@
 
 #taskbar_applist {
     max-width: -webkit-fill-available;
+    max-width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    max-width: fill-available;
     overflow: auto;
     button {
         aspect-ratio: 1/1;
-        height: -webkit-fill-available;
+        /* height: -webkit-fill-available;
+        height: -moz-available;
+        height: fill-available; */
         background-color: transparent;
         img {
             height: -webkit-fill-available;
+            height: -moz-available;          /* WebKit-based browsers will ignore this. */
+            height: fill-available;
             transform: scale(0.7);
         }
     }
@@ -49,7 +55,9 @@
     margin-left: auto;
     min-width: fit-content;
     #volume_btn {
-        height: -webkit-fill-available;;
+        /* height: -webkit-fill-available;
+        height: -moz-available;
+        height: fill-available; */
         aspect-ratio: 1/2;
 
         background-color: transparent;
