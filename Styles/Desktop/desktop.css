@@ -12,6 +12,8 @@
 #desktop_icons_grid {
     width: 100%;
     height: -webkit-fill-available;
+    height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    height: fill-available;
     display: flex;
     justify-items: start;
     align-items: start;

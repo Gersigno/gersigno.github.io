@@ -1,3 +1,6 @@
 .whoami_container::-webkit-scrollbar {
     width: 16px;
 }
+.whoami_container::-moz-scrollbar {
+    width: 16px;
+}

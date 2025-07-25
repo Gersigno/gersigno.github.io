@@ -1,4 +1,6 @@
 body {
     margin: 25px 14px 14px 14px;
-    width: -webkit-fill-available !important;
+    width: -moz-available !important;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available !important;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available !important;
 }

@@ -1,6 +1,8 @@
 start-menu {
     background: linear-gradient(to bottom, color-mix(in srgb, var(--color-lighteralt) 40%, transparent), color-mix(in srgb, var(--color-lighteralt) 50%, transparent) 10%);
-    backdrop-filter: blur(15px);
+    backdrop-filter: var(--filter-distortion);
+    -webkit-backdrop-filter: var(--filter-distortion);
+    -moz-backdrop-filter: var(--filter-distortion);
 
     margin-bottom: 12px;
     border-radius: 8px;
@@ -11,7 +13,7 @@ start-menu {
     left: 50vw !important;
     transform: translateX(-50%);
 
-    animation: start-menu ease-out 200ms forwards;
+    animation: start-menu cubic-bezier(0.18, 0.89, 0.32, 1.28) 300ms forwards;
 
     width: 30vw !important;
 
@@ -20,7 +22,9 @@ start-menu {
     menu:first-of-type {
         flex-direction: row;
         justify-content: flex-end;
-        width: -webkit-fill-available;
+        width: -moz-available;          /* WebKit-based browsers will ignore this. */
+        width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+        width: fill-available;
         height: fit-content;
 
         button {
@@ -35,6 +39,7 @@ start-menu {
         button:hover {
             background-color: color-mix(in srgb, var(--color-lighter) 25%, transparent) !important;
             -webkit-box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent) !important;
+            -moz-box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent) !important;
             border-radius: 6px;
         }
     }
@@ -45,6 +50,9 @@ start-menu {
         margin-top: 0 !important;
         margin-right: 12px;
         &::-webkit-scrollbar {
+            width: 0px;
+        }
+        &::-moz-scrollbar {
             width: 0px;
         }
     }
@@ -58,6 +66,8 @@ start-menu {
         border-radius: 6px;
         background-color: color-mix(in srgb, var(--color-lighter) 25%, transparent) !important;
         -webkit-box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent) !important;
+        -moz-box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent) !important;
+        box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent) !important;
     }
 }
 

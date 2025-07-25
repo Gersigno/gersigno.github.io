@@ -4,6 +4,7 @@ process-window {
     border-top-right-radius: 8px;
     padding: 0 0 3px;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
 
     iframe:first-of-type {
         padding: 0 3px;

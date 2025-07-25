@@ -15,6 +15,8 @@
 * {
     image-rendering: pixelated;
     -webkit-font-smoothing:none !important;
+    -moz-font-smoothing: none !important;
+    font-smoothing: none !important;
 }
 
 h1,
@@ -42,19 +44,15 @@ h3::after, h4::after {
     width: 100%;
 }
 
-::-webkit-scrollbar {
-    width: 17px;
-}
-
-::-webkit-scrollbar {
+::-webkit-scrollbar, ::-moz-scrollbar {
     width: 16px;
 }
 
-::-webkit-scrollbar-corner {
+::-webkit-scrollbar-corner, ::-moz-scrollbar-corner {
     background: #dfdfdf;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb, ::-moz-scrollbar-thumb {
     background-position: 50%;
     background-repeat: no-repeat;
     background-color: #c8d6fb;
@@ -64,11 +62,11 @@ h3::after, h4::after {
     box-shadow: inset -3px 0 #bad1fc, inset 1px 1px #b7caf5;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb, ::-moz-scrollbar-thumb {
     background-color: #dfdfdf;
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track, ::-moz-scrollbar-track {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='2' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 0H0v1h1v1h1V1H1V0z' fill='silver'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 0H1v1H0v1h1V1h1V0z' fill='%23fff'/%3E%3C/svg%3E");
 }

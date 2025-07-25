@@ -1,6 +1,8 @@
 toast-notification {
     border-radius: 8px;
     -webkit-box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent) !important;
+    -moz-box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent) !important;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-lighter) 35%, transparent) !important;
     filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.5));
 
     &:is(.open) {

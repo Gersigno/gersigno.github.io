@@ -12,6 +12,11 @@
     padding-bottom: 5px;
 }
 
+::-moz-scrollbar {
+    width: 0px;
+    padding-bottom: 5px;
+}
+
 body {
     display: flex;
 }
@@ -72,14 +77,17 @@ button:focus {
     69% {
         box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,0), 0px 0px 0px 0px rgba(255,255,255,1) !important;
         -webkit-box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,0), 0px 0px 0px 0px rgba(255,255,255,1) !important;
+        -moz-box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,0), 0px 0px 0px 0px rgba(255,255,255,1) !important;
     }
     70% {
         box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,.4), 0px 0px 0px 0px rgba(255,255,255,1) !important;
         -webkit-box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,.4), 0px 0px 0px 0px rgba(255,255,255,1) !important;
+        -moz-box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,.4), 0px 0px 0px 0px rgba(255,255,255,1) !important;
     }
     100% {
         box-shadow: inset 0px 0px 0px 3px rgba(117, 117, 255,.2), 0px 0px 0px 10px rgba(255,255,255,0) !important;
         -webkit-box-shadow: inset 0px 0px 0px 3px rgba(117, 117, 255,.2), 0px 0px 0px 10px rgba(255,255,255,0) !important;
+        -moz-box-shadow: inset 0px 0px 0px 3px rgba(117, 117, 255,.2), 0px 0px 0px 10px rgba(255,255,255,0) !important;
     }
 }
 @keyframes hoverShine {

@@ -2,8 +2,12 @@
     outline: 3px solid var(--color-primary) !important;
     border-radius: 4px;
     -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 .selected:hover, .selected:focus, .selected:focus-within {
     -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
 }

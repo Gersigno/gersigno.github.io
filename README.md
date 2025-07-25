@@ -15,7 +15,7 @@
 ###  <a href="https://gersigno.github.io/">🔗 Test it right now</a>
 
 ## 🧩 Roadmap
-- Additional browser support
+- Additional browser support (Moz engine & safari)
 - Full responsive *(not finished yet)*
 - More themes
 - Complet documentation

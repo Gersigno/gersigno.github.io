@@ -16,13 +16,6 @@ process-window {
 
     pointer-events: all;
 
-    &:is(.maximized) {
-        left: 0 !important;
-        top: 0 !important;
-        width: 100% !important;
-        height: calc(100% - var(--taskbar-height)) !important;
-    }
-
     header:first-child {
         display: flex;
         justify-content: space-between;
@@ -50,6 +43,8 @@ process-window {
             button {
                 width: 32px;
                 height: -webkit-fill-available;
+                height: -moz-available;          /* WebKit-based browsers will ignore this. */
+                height: fill-available;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -77,4 +72,11 @@ process-window {
         width: 100%;
         height: 100%;
     }
+}
+
+.maximized {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: calc(100% - var(--taskbar-height)) !important;
 }

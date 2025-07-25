@@ -24,6 +24,7 @@
     transition: transform 0.5s ease-in-out;
     opacity: 0;
     -webkit-mask-image: linear-gradient(to right,black 10%,transparent 100%);
+    -moz-mask-image: linear-gradient(to right,black 10%,transparent 100%);
     mask-image: linear-gradient(to right,black 10%,transparent 100%);
 }
 
@@ -53,6 +54,7 @@
         transition: 0.5s ease-in-out;
         opacity: 0;
         -webkit-mask-image: linear-gradient(to right,black 10%,transparent 100%);
+        -moz-mask-image: linear-gradient(to right,black 10%,transparent 100%);
         mask-image: linear-gradient(to right,black 10%,transparent 100%);
     }
     .gwin_carousel_slide_current {
@@ -87,6 +89,8 @@
 
         width: 50%;
         height: -webkit-fill-available;
+        height: -moz-available;          /* WebKit-based browsers will ignore this. */
+        height: fill-available;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;

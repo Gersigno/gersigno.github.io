@@ -27,6 +27,8 @@ nav-view {
 
 main {
     width: -webkit-fill-available;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: fill-available; /* Mozilla-based browsers will ignore this. */
     background-color: var(--color-lighteralt);
 }
 

@@ -12,7 +12,9 @@
 }
 #preview_livecoding > video {
     margin: 2vh 0;
-    width: -webkit-fill-available;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
 }
 
 #software_list {
@@ -35,6 +37,24 @@
 }
 
 .preview_full {
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+    height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    height: fill-available;
+}
+
+.preview_img {
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+    height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    height: fill-available;
+    border: 1px solid color-mix(in srgb, grey 20%, white);
+    border-radius: 8px;
+    -webkit-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    -moz-box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
+    box-shadow: inset 0 -1px 0 color-mix(in srgb, grey 50%, white);
 }

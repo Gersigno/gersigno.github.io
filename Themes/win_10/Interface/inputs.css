@@ -38,6 +38,7 @@ input[type="reset"] {
 
 input[type="range"] {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     background: transparent;
     cursor: pointer;
@@ -48,13 +49,13 @@ input[type="range"]:focus {
     outline: none;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track, input[type="range"]::-moz-slider-runnable-track {
     background-color: var(--color-primary);
     border-radius: 0.5rem;
     height: 0.2rem;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb, input[type="range"]::-moz-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     margin-top: -12.4px;
@@ -64,7 +65,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 0.5rem;
 }
 
-input[type="range"]:focus::-webkit-slider-thumb {
+input[type="range"]:focus::-webkit-slider-thumb, input[type="range"]:focus::-moz-slider-thumb {
     outline: 3px solid var(--color-primary);
     outline-offset: 0.125rem;
 }
@@ -90,6 +91,7 @@ input[type="range"]:focus::-moz-range-thumb {
 
 input[type="color"] {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 36px;
     height: 36px;
@@ -101,11 +103,11 @@ input[type="color"] {
     overflow: hidden;
 }
 
-input[type="color"]::-webkit-color-swatch {
+input[type="color"]::-webkit-color-swatch, input[type="color"]::-moz-color-swatch {
     border: none;
 }
 
-input[type="color"]::-webkit-color-swatch-wrapper {
+input[type="color"]::-webkit-color-swatch-wrapper, input[type="color"]::-moz-color-swatch-wrapper {
     padding: 0;
 }
 
@@ -122,6 +124,7 @@ input[type="color"]:focus {
 
 input[type="radio"] {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 16px;
     height: 16px;
@@ -163,6 +166,7 @@ input[type="radio"]:focus {
 
 input[type="checkbox"]:not(:is(.gwin_switch)) {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 16px;
     height: 16px;
@@ -204,6 +208,7 @@ input[type="checkbox"]:not(:is(.gwin_switch)):focus {
 
 .gwin_switch {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 40px;
     height: 20px;
