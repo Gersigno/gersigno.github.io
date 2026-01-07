@@ -1,6 +1,6 @@
 export default class Settings {
     #default_settings = {
-        theme_name:     "custom",
+        theme_name:     "win_11",
         theme_color:    "blue",
         theme_dark:     false,
         welcome_read:   false,
