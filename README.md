@@ -11,6 +11,6 @@
 > You can still check the beta branches of this repository !
 
 > [!TIP]
-> You can visit the live project [here](https://www.gersigno.dev/) *(https://gersigno.dev)*
+> You can visit the latest up-to-date version [here](https://www.gersigno.dev/) *(https://gersigno.dev)*
 
 <img src="https://raw.githubusercontent.com/Gersigno/gersigno.github.io/refs/heads/main/resources/Previews/preview_themes.gif">
